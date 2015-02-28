@@ -13,7 +13,7 @@ class LazyImageView: UIImageView {
     var imageURL: NSURL? {
         didSet {
             if let path: String = self.imageURL?.absoluteString {
-                Alamofire.request(.GET, path).response({ (_, _, data: AnyObject?, _) in
+                Alamofire.request(.GET, path).response({ (_, _, data: AnyObject?, error) in
                     self.image = UIImage(data: data as NSData)
                 })
             }

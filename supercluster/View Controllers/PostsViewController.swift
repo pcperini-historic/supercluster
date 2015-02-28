@@ -8,6 +8,7 @@
 
 import UIKit
 import RFQuiltLayout
+import MapKit
 
 class PostsViewController: UIViewController {
     // Views
@@ -27,24 +28,56 @@ class PostsViewController: UIViewController {
         layout?.direction = UICollectionViewScrollDirection.Vertical;
         layout?.blockPixels = CGSize(width: 10, height: 10)
         layout?.delegate = self
+        
+        // Setup data
+        self.setCoordinate(CLLocationCoordinate2D(latitude: 0, longitude: 0), radius: 0)
+    }
+    
+    // Location & Data
+    var posts: [Post] = []
+    func setCoordinate(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance) {
+        self.posts = []
+        TwitterManager.fetchPosts(coordinate, radius: radius, response: { (post: Post) in
+            self.addPost(post)
+        })
+    }
+    
+    func addPost(post: Post) {
+        self.collectionView?.performBatchUpdates({
+            self.posts.append(post)
+            self.collectionView?.insertItemsAtIndexPaths([NSIndexPath(forItem: self.posts.count - 1, inSection: 0)])
+        }, completion: nil)
     }
 }
 
-extension PostsViewController: UICollectionViewDataSource { // FUCK EVERYTHING HERE
+extension PostsViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.posts.count
     }
     
+    // FUCK EVERYTHING HERE vvv
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell: PostView?
+        let post = self.posts[indexPath.row]
         
-        if indexPath.item % 2 == 0 {
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier(className(TextPostView.self),
-                forIndexPath: indexPath) as? PostView
+        if post.imageURL == nil {
+            var textCell = collectionView.dequeueReusableCellWithReuseIdentifier(className(TextPostView.self),
+                forIndexPath: indexPath) as? TextPostView
+            
+            textCell?.handle = post.user.handle
+            textCell?.avatarImageURL = post.user.avatarImageURL
+            textCell?.source = post.source
+            textCell?.text = post.text
+            textCell?.pubdate = post.pubdate
+            textCell?.place = post.place.name
+            
+            cell = textCell
         } else {
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier(className(ImagePostView.self),
-                forIndexPath: indexPath) as? PostView
+            var imageCell = collectionView.dequeueReusableCellWithReuseIdentifier(className(ImagePostView.self),
+                forIndexPath: indexPath) as? ImagePostView
+            cell = imageCell
         }
+        
         
         return cell!
     }
@@ -55,7 +88,9 @@ extension PostsViewController: UICollectionViewDelegate {
 
 extension PostsViewController: RFQuiltLayoutDelegate {
     func blockSizeForItemAtIndexPath(indexPath: NSIndexPath!) -> CGSize {
-        if indexPath.item % 2 == 0 {
+        let post = self.posts[indexPath.row]
+        
+        if post.imageURL == nil {
             return CGSize(width: 17.5, height: 14.5)
         } else {
             return CGSize(width: 17.5, height: 32.0)

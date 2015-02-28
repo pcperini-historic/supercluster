@@ -11,5 +11,5 @@ import MapKit
 
 struct Place {
     var coordinate: CLLocationCoordinate2D
-    var placeName: String?
+    var name: String?
 }

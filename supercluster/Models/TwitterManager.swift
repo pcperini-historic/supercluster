@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 perini-hestin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import MapKit
 
 class TwitterManager: APIManager {
     override internal class var host: String {
-        return ""
+        return NSBundle.mainBundle().pathForResource("twitter", ofType: "json")!
     }
     
     override internal class func postFromDictionary(dictionary: NSDictionary) -> Post {
@@ -22,14 +22,18 @@ class TwitterManager: APIManager {
 extension Post {
     init(tweetData: NSDictionary) {
         var userData: NSDictionary = tweetData["user"] as NSDictionary
-        var imageURL: NSURL? = NSURL(string: tweetData["extended_entities"]?["media_url"] as String)
+
+        var imageURL: NSURL?
+        if let imageURLString = tweetData["extended_entities"]?["media_url"] as? String {
+             imageURL = NSURL(string: imageURLString)
+        }
 
         self.init(text: tweetData["text"] as? String,
             imageURL: imageURL,
             source: SourceType.Twitter,
             user: User(tweetData: userData),
             place: Place(tweetData: tweetData),
-            pubdate: NSDate(timeIntervalSince1970: NSTimeInterval(tweetData["timestamp_ms"] as NSNumber) / 1000.0))
+            pubdate: NSDate(timeIntervalSince1970: NSTimeInterval((tweetData["timestamp_ms"] as NSString).doubleValue / 1000.0)))
     }
 }
 
@@ -50,6 +54,6 @@ extension Place {
         
         var placeName: String? = tweetData["place"]?["name"] as? String
         self.init(coordinate: coordinate,
-            placeName: placeName)
+            name: placeName)
     }
 }

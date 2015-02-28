@@ -14,15 +14,26 @@ class InstagramManager: APIManager {
         return ""
     }
     
+    override class func posts(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance) -> [Post] {
+        let response: NSDictionary = (NSString(contentsOfFile: self.host, encoding: NSUTF8StringEncoding, error: nil) as String).jsonObject as NSDictionary
+        
+        var posts: [Post] = []
+        for entry: NSDictionary in (response["data"] as [NSDictionary]) {
+            posts.append(self.postFromDictionary(entry))
+        }
+        
+        return posts
+    }
+    
     override internal class func postFromDictionary(dictionary: NSDictionary) -> Post {
-        return Post(instagramData: dictionary["data"] as NSDictionary)
+        return Post(instagramData: dictionary)
     }
 }
 
 extension Post {
     init(instagramData: NSDictionary) {
         var userData: NSDictionary = instagramData["user"] as NSDictionary
-        var imageURL: NSURL? = NSURL(string: instagramData["extended_entities"]?["media_url"] as String)
+        var imageURL: NSURL? = NSURL(string: (instagramData["images"]?["standard_resolution"]? as NSDictionary)["url"] as String)
         
         self.init(text: instagramData["caption"]?["text"] as? String,
             imageURL: imageURL,
@@ -52,6 +63,6 @@ extension Place {
         
         var placeName: String? = instagramData["name"] as? String
         self.init(coordinate: coordinate,
-            placeName: placeName)
+            name: placeName)
     }
 }

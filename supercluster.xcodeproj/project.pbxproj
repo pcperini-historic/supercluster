@@ -18,6 +18,7 @@
 		7377127B1AA26D45007BE4FE /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377127A1AA26D45007BE4FE /* Place.swift */; };
 		7377127D1AA26EFD007BE4FE /* InstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377127C1AA26EFD007BE4FE /* InstagramManager.swift */; };
 		7377127F1AA2706E007BE4FE /* FoursquareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377127E1AA2706E007BE4FE /* FoursquareManager.swift */; };
+		7382819B1AA2779700F46162 /* twitter.json in Resources */ = {isa = PBXBuildFile; fileRef = 7382819A1AA2779700F46162 /* twitter.json */; };
 		73C7FBB81AA13351005708A3 /* ClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7FBB71AA13351005708A3 /* ClassExtensions.swift */; };
 		73C7FBBA1AA134B8005708A3 /* TextPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7FBB91AA134B8005708A3 /* TextPostView.swift */; };
 		73C7FBBC1AA134C5005708A3 /* TextPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73C7FBBB1AA134C5005708A3 /* TextPostView.xib */; };
@@ -64,6 +65,7 @@
 		7377127A1AA26D45007BE4FE /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = Models/Place.swift; sourceTree = "<group>"; };
 		7377127C1AA26EFD007BE4FE /* InstagramManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstagramManager.swift; path = Models/InstagramManager.swift; sourceTree = "<group>"; };
 		7377127E1AA2706E007BE4FE /* FoursquareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoursquareManager.swift; path = Models/FoursquareManager.swift; sourceTree = "<group>"; };
+		7382819A1AA2779700F46162 /* twitter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = twitter.json; sourceTree = "<group>"; };
 		73C7FBB21AA13042005708A3 /* supercluster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "supercluster-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		73C7FBB71AA13351005708A3 /* ClassExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassExtensions.swift; sourceTree = "<group>"; };
 		73C7FBB91AA134B8005708A3 /* TextPostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextPostView.swift; path = "supercluster/Post Views/TextPostView.swift"; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7382819C1AA2779B00F46162 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				7382819A1AA2779700F46162 /* twitter.json */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
 		73CF1D7E1AA17BD400D7280D /* Map Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +203,7 @@
 		73F16D2D1AA112C100725D96 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7382819C1AA2779B00F46162 /* Demo */,
 				73C7FBB21AA13042005708A3 /* supercluster-Bridging-Header.h */,
 				73F16D2E1AA112C100725D96 /* Info.plist */,
 				73C7FBB71AA13351005708A3 /* ClassExtensions.swift */,
@@ -236,8 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				73F16D331AA112C100725D96 /* Main.storyboard */,
-				73F16D561AA1251300725D96 /* PostsViewController.swift */,
 				73F16D5D1AA125B500725D96 /* MapViewController.swift */,
+				73F16D561AA1251300725D96 /* PostsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -352,6 +363,7 @@
 				73C7FBBC1AA134C5005708A3 /* TextPostView.xib in Resources */,
 				73F16D3A1AA112C100725D96 /* LaunchScreen.xib in Resources */,
 				73F16D531AA1172900725D96 /* ImagePostView.xib in Resources */,
+				7382819B1AA2779700F46162 /* twitter.json in Resources */,
 				73F16D371AA112C100725D96 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

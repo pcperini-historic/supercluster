@@ -22,8 +22,19 @@ class FoursquareManager: APIManager {
         return ""
     }
     
+    override class func posts(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance) -> [Post] {
+        let response: NSDictionary = (NSString(contentsOfFile: self.host, encoding: NSUTF8StringEncoding, error: nil) as String).jsonObject as NSDictionary
+        
+        var posts: [Post] = []
+        for entry: NSDictionary in (response["response"]?["venues"] as [NSDictionary]) {
+            posts.append(self.postFromDictionary(entry))
+        }
+        
+        return posts
+    }
+    
     override internal class func postFromDictionary(dictionary: NSDictionary) -> Post {
-        return Post(checkinData: dictionary["response"] as NSDictionary)
+        return Post(checkinData: dictionary as NSDictionary)
     }
 }
 
@@ -34,7 +45,7 @@ extension Post {
             source: SourceType.Foursquare,
             user: User(checkinData: [:]),
             place: Place(checkinData: checkinData),
-            pubdate: NSDate()))
+            pubdate: NSDate())
     }
 }
 
@@ -57,6 +68,6 @@ extension Place {
         
         var placeName: String? = checkinData["name"] as? String
         self.init(coordinate: coordinate,
-            placeName: placeName)
+            name: placeName)
     }
 }
