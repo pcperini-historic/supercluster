@@ -12,10 +12,16 @@ import MapKit
 class MapViewController: UIViewController {
     // Maps
     @IBOutlet var mapView: MKMapView?
+    let searchableCameraAltitude: CLLocationDistance = 600_000.00
+    var startingCameraAltitude: CLLocationDistance?
+    
+    // Cluster
+    @IBOutlet var clusterView: ClusterView?
     
     // View Lifecycle
     override func viewDidLoad() {
         self.clusterSingleTapGestureRecognizer?.requireGestureRecognizerToFail(self.clusterDoubleTapGestureRecognizer!)
+        self.startingCameraAltitude = self.mapView?.camera.altitude
     }
     
     // Gestures
@@ -27,31 +33,47 @@ class MapViewController: UIViewController {
             break;
             
         case 2:
-            if var camera = self.mapView?.camera {
-                // Bounce Cluster
-                UIView.animateWithDuration(0.15, animations: {
-                    recognizer.view?.layer.transform = CATransform3DMakeScale(1.25, 1.25, 1.00)
-                    return
-                }, completion: { (value: Bool) in
-                    UIView.animateWithDuration(0.15, animations: {
-                        recognizer.view?.layer.transform = CATransform3DMakeScale(0.75, 0.75, 1.00)
+            if var camera: MKMapCamera = self.mapView?.camera.copy() as? MKMapCamera {
+                UIView.animate([
+                    // Bounce Cluster
+                    (0.15, {
+                        self.clusterView?.layer.transform = CATransform3DMakeScale(1.25, 1.25, 1.00)
                         return
-                    }, completion: { (value: Bool) in
-                        UIView.animateWithDuration(0.05, animations: {
-                            recognizer.view?.layer.transform = CATransform3DIdentity
-                            // Zoom map
-                            camera.altitude = 1
-                            self.mapView?.setCamera(camera,
-                                animated: true)
-                        })
-                    })
-                })
+                    }),
+                    (0.15, {
+                        self.clusterView?.layer.transform = CATransform3DMakeScale(0.75, 0.75, 1.00)
+                        return
+                    }),
+                    (0.05, {
+                        self.clusterView?.layer.transform = CATransform3DIdentity
+                        return
+                    }),
+                    
+                    (0.00, {
+                        // Zoom map
+                        camera.altitude /= 10
+                        self.mapView?.setCamera(camera,
+                            animated: true)
+                    }),
+                ])
             }
             
             break;
             
         default:
             break;
+        }
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
+        self.clusterView?.layer.transform = CATransform3DMakeScale(
+            CGFloat(self.startingCameraAltitude! / mapView.camera.altitude),
+            CGFloat(self.startingCameraAltitude! / mapView.camera.altitude), 1.00)
+        
+        if self.mapView?.camera.altitude <= searchableCameraAltitude {
+            self.clusterView?.tintColor = UIColor(red: 0.13, green: 0.75, blue: 0.80, alpha: 1.00)
         }
     }
 }

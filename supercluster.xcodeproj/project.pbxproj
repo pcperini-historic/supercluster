@@ -13,6 +13,7 @@
 		73C7FBBC1AA134C5005708A3 /* TextPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73C7FBBB1AA134C5005708A3 /* TextPostView.xib */; };
 		73CF1D481AA1582A00D7280D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CF1D471AA1582A00D7280D /* MapKit.framework */; };
 		73CF1D7D1AA17BD200D7280D /* ClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1D7C1AA17BD200D7280D /* ClusterView.swift */; };
+		73CF1D801AA18D4700D7280D /* UIView+AnimationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1D7F1AA18D4700D7280D /* UIView+AnimationExtensions.swift */; };
 		73F16D301AA112C100725D96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F16D2F1AA112C100725D96 /* AppDelegate.swift */; };
 		73F16D351AA112C100725D96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F16D331AA112C100725D96 /* Main.storyboard */; };
 		73F16D371AA112C100725D96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73F16D361AA112C100725D96 /* Images.xcassets */; };
@@ -44,6 +45,7 @@
 		73C7FBBB1AA134C5005708A3 /* TextPostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextPostView.xib; path = "supercluster/Post Views/TextPostView.xib"; sourceTree = "<group>"; };
 		73CF1D471AA1582A00D7280D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		73CF1D7C1AA17BD200D7280D /* ClusterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClusterView.swift; path = Views/ClusterView.swift; sourceTree = "<group>"; };
+		73CF1D7F1AA18D4700D7280D /* UIView+AnimationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+AnimationExtensions.swift"; path = "Categories/UIView+AnimationExtensions.swift"; sourceTree = "<group>"; };
 		73F16D2A1AA112C000725D96 /* supercluster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = supercluster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F16D2E1AA112C100725D96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73F16D2F1AA112C100725D96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		73CF1D811AA18D4A00D7280D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				73CF1D7F1AA18D4700D7280D /* UIView+AnimationExtensions.swift */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		73F16D211AA112C000725D96 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 				73CF1D7E1AA17BD400D7280D /* Views */,
 				73F16D511AA1171100725D96 /* Post Views */,
 				73F16D2D1AA112C100725D96 /* Supporting Files */,
+				73CF1D811AA18D4A00D7280D /* Categories */,
 			);
 			path = supercluster;
 			sourceTree = "<group>";
@@ -339,6 +350,7 @@
 				73F16D551AA121C800725D96 /* PostView.swift in Sources */,
 				73F16D301AA112C100725D96 /* AppDelegate.swift in Sources */,
 				73F16D5E1AA125B500725D96 /* MapViewController.swift in Sources */,
+				73CF1D801AA18D4700D7280D /* UIView+AnimationExtensions.swift in Sources */,
 				73C7FBB81AA13351005708A3 /* ClassExtensions.swift in Sources */,
 				73F16D581AA1251300725D96 /* PostsViewController.swift in Sources */,
 			);

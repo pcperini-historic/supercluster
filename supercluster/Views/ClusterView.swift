@@ -22,6 +22,17 @@ import UIKit
         }
     }
     
+    override var tintColor: UIColor! {
+        didSet {
+            for ring: UIView in self.rings {
+                ring.layer.borderColor = self.tintColor.CGColor
+                for pip: UIView in ring.subviews as [UIView] {
+                    pip.backgroundColor = self.tintColor
+                }
+            }
+        }
+    }
+    
     private func updateRotation() {
         if (self.rotationDuration <= 0) {
             for ring: UIView in self.rings {

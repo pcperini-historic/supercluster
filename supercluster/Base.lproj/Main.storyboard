@@ -91,6 +91,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fdV-Za-hRI">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="w0D-fV-xx9" id="MR6-L8-Cry"/>
+                                </connections>
                             </mapView>
                             <view alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKY-U3-CaR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
@@ -102,7 +105,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVf-te-9da" customClass="ClusterView" customModule="supercluster" customModuleProvider="target">
                                 <rect key="frame" x="270" y="270" width="60" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="b4A-Ff-aEy"/>
@@ -110,7 +113,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="rotationDuration">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rotatesClockwise" value="NO"/>
                                 </userDefinedRuntimeAttributes>
@@ -136,6 +139,7 @@
                     <connections>
                         <outlet property="clusterDoubleTapGestureRecognizer" destination="6ep-hk-KWr" id="qgX-pt-IfK"/>
                         <outlet property="clusterSingleTapGestureRecognizer" destination="lWH-hg-hi5" id="gte-GH-uhf"/>
+                        <outlet property="clusterView" destination="WVf-te-9da" id="OZg-9l-EPj"/>
                         <outlet property="mapView" destination="fdV-Za-hRI" id="bLr-8T-biY"/>
                     </connections>
                 </viewController>
