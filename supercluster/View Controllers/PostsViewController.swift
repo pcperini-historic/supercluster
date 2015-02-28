@@ -20,15 +20,16 @@ class PostsViewController: UIViewController {
         }
         
         // Setup layout
+        self.collectionView?.contentInset = UIEdgeInsets(top: 70, left: 10, bottom: 10, right: 10)
+        
         let layout: RFQuiltLayout? = self.collectionView?.collectionViewLayout as? RFQuiltLayout
         layout?.direction = UICollectionViewScrollDirection.Vertical;
         layout?.blockPixels = CGSize(width: 10, height: 10)
         layout?.delegate = self
     }
-    
 }
 
-extension PostsViewController: UICollectionViewDataSource {
+extension PostsViewController: UICollectionViewDataSource { // FUCK EVERYTHING HERE
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -38,10 +39,10 @@ extension PostsViewController: UICollectionViewDataSource {
         
         if indexPath.item % 2 == 0 {
             cell = collectionView.dequeueReusableCellWithReuseIdentifier(className(TextPostView.self),
-            forIndexPath: indexPath) as? PostView
+                forIndexPath: indexPath) as? PostView
         } else {
             cell = collectionView.dequeueReusableCellWithReuseIdentifier(className(ImagePostView.self),
-            forIndexPath: indexPath) as? PostView
+                forIndexPath: indexPath) as? PostView
         }
         
         return cell!
@@ -59,12 +60,4 @@ extension PostsViewController: RFQuiltLayoutDelegate {
             return CGSize(width: 17.5, height: 32.0)
         }
     }
-    
-//    func insetsForItemAtIndexPath(indexPath: NSIndexPath!) -> UIEdgeInsets {
-//        if indexPath.item < 2 {
-//            return UIEdgeInsets(top: 70, left: 10, bottom: 10, right: 0)
-//        }
-//        
-//        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 0)
-//    }
 }

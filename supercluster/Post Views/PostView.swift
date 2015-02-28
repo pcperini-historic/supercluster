@@ -21,23 +21,15 @@ import UIKit
     }
     
     // Border
-    @IBInspectable var borderColor: UIColor? {
-        get {
-            return UIColor(CGColor: self.layer.borderColor)
-        }
-        
-        set {
-            self.layer.borderColor = newValue?.CGColor
+    @IBInspectable var borderColor: UIColor = UIColor.clearColor() {
+        didSet {
+            self.layer.borderColor = self.borderColor.CGColor
         }
     }
     
-    @IBInspectable var borderWidth: CGFloat {
-        get {
-            return self.layer.borderWidth
-        }
-        
-        set {
-            self.layer.borderWidth = newValue
+    @IBInspectable var borderWidth: CGFloat = 0 {
+        didSet {
+            self.layer.borderWidth = self.borderWidth
         }
     }
 }
