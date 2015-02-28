@@ -7,18 +7,19 @@
 //
 
 import Foundation
-import MapKit
 
 struct Post {
     enum SourceType {
+        case None
         case Twitter
         case Instagram
         case Foursquare
     }
     
-    var coordinate: CLLocationCoordinate2D
-    var text: String
-    var image: UIImage
+    var text: String?
+    var imageURL: NSURL?
     var source: SourceType
-    var username: String
+    var user: User
+    var place: Place
+    var pubdate: NSDate
 }

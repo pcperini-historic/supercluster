@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B0D3716050AEBA3015D5F26 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1431AE8FB49B5FA21CE4AD /* libPods.a */; };
+		737712651AA24B22007BE4FE /* TwitterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737712641AA24B22007BE4FE /* TwitterManager.swift */; };
+		737712671AA24CD3007BE4FE /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737712661AA24CD3007BE4FE /* StreamReader.swift */; };
+		737712691AA24EDA007BE4FE /* String+JSONExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737712681AA24EDA007BE4FE /* String+JSONExtensions.swift */; };
+		7377126B1AA26040007BE4FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377126A1AA26040007BE4FE /* User.swift */; };
+		7377126F1AA2642C007BE4FE /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377126E1AA2642C007BE4FE /* LazyImageView.swift */; };
+		737712721AA2643C007BE4FE /* ClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737712701AA2643C007BE4FE /* ClusterView.swift */; };
+		737712731AA2643C007BE4FE /* ViewerAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737712711AA2643C007BE4FE /* ViewerAnnotationView.swift */; };
+		737712791AA26A94007BE4FE /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737712781AA26A94007BE4FE /* APIManager.swift */; };
+		7377127B1AA26D45007BE4FE /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377127A1AA26D45007BE4FE /* Place.swift */; };
+		7377127D1AA26EFD007BE4FE /* InstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377127C1AA26EFD007BE4FE /* InstagramManager.swift */; };
+		7377127F1AA2706E007BE4FE /* FoursquareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377127E1AA2706E007BE4FE /* FoursquareManager.swift */; };
 		73C7FBB81AA13351005708A3 /* ClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7FBB71AA13351005708A3 /* ClassExtensions.swift */; };
 		73C7FBBA1AA134B8005708A3 /* TextPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7FBB91AA134B8005708A3 /* TextPostView.swift */; };
 		73C7FBBC1AA134C5005708A3 /* TextPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73C7FBBB1AA134C5005708A3 /* TextPostView.xib */; };
 		73CF1D481AA1582A00D7280D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CF1D471AA1582A00D7280D /* MapKit.framework */; };
-		73CF1D7D1AA17BD200D7280D /* ClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1D7C1AA17BD200D7280D /* ClusterView.swift */; };
 		73CF1D801AA18D4700D7280D /* UIView+AnimationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1D7F1AA18D4700D7280D /* UIView+AnimationExtensions.swift */; };
-		73CF1D851AA2322C00D7280D /* ViewerAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1D841AA2322C00D7280D /* ViewerAnnotationView.swift */; };
 		73CF1D871AA2329A00D7280D /* Viewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1D861AA2329A00D7280D /* Viewer.swift */; };
 		73CF1D8A1AA23A0E00D7280D /* ViewerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1D891AA23A0E00D7280D /* ViewerManager.swift */; };
 		73CF1D8D1AA23FA500D7280D /* CLLocationCoordinate2D+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1D8C1AA23FA500D7280D /* CLLocationCoordinate2D+Extensions.swift */; };
@@ -29,6 +37,7 @@
 		73F16D551AA121C800725D96 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F16D541AA121C800725D96 /* PostView.swift */; };
 		73F16D581AA1251300725D96 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F16D561AA1251300725D96 /* PostsViewController.swift */; };
 		73F16D5E1AA125B500725D96 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F16D5D1AA125B500725D96 /* MapViewController.swift */; };
+		D49854F88F83DB2F52E364BF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D880FA3DF57C5C74CC52D12 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,16 +51,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D880FA3DF57C5C74CC52D12 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56AD9FB49B4642F96F7E255A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		6E1431AE8FB49B5FA21CE4AD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		737712641AA24B22007BE4FE /* TwitterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwitterManager.swift; path = Models/TwitterManager.swift; sourceTree = "<group>"; };
+		737712661AA24CD3007BE4FE /* StreamReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
+		737712681AA24EDA007BE4FE /* String+JSONExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+JSONExtensions.swift"; path = "Categories/String+JSONExtensions.swift"; sourceTree = "<group>"; };
+		7377126A1AA26040007BE4FE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		7377126E1AA2642C007BE4FE /* LazyImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LazyImageView.swift; path = "supercluster/Post Views/LazyImageView.swift"; sourceTree = "<group>"; };
+		737712701AA2643C007BE4FE /* ClusterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClusterView.swift; path = "Map Views/ClusterView.swift"; sourceTree = "<group>"; };
+		737712711AA2643C007BE4FE /* ViewerAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewerAnnotationView.swift; path = "Map Views/ViewerAnnotationView.swift"; sourceTree = "<group>"; };
+		737712781AA26A94007BE4FE /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = Models/APIManager.swift; sourceTree = "<group>"; };
+		7377127A1AA26D45007BE4FE /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = Models/Place.swift; sourceTree = "<group>"; };
+		7377127C1AA26EFD007BE4FE /* InstagramManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstagramManager.swift; path = Models/InstagramManager.swift; sourceTree = "<group>"; };
+		7377127E1AA2706E007BE4FE /* FoursquareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoursquareManager.swift; path = Models/FoursquareManager.swift; sourceTree = "<group>"; };
 		73C7FBB21AA13042005708A3 /* supercluster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "supercluster-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		73C7FBB71AA13351005708A3 /* ClassExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassExtensions.swift; sourceTree = "<group>"; };
 		73C7FBB91AA134B8005708A3 /* TextPostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextPostView.swift; path = "supercluster/Post Views/TextPostView.swift"; sourceTree = "<group>"; };
 		73C7FBBB1AA134C5005708A3 /* TextPostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextPostView.xib; path = "supercluster/Post Views/TextPostView.xib"; sourceTree = "<group>"; };
 		73CF1D471AA1582A00D7280D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		73CF1D7C1AA17BD200D7280D /* ClusterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClusterView.swift; path = Views/ClusterView.swift; sourceTree = "<group>"; };
 		73CF1D7F1AA18D4700D7280D /* UIView+AnimationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+AnimationExtensions.swift"; path = "Categories/UIView+AnimationExtensions.swift"; sourceTree = "<group>"; };
-		73CF1D841AA2322C00D7280D /* ViewerAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewerAnnotationView.swift; path = Views/ViewerAnnotationView.swift; sourceTree = "<group>"; };
 		73CF1D861AA2329A00D7280D /* Viewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Viewer.swift; path = Models/Viewer.swift; sourceTree = "<group>"; };
 		73CF1D891AA23A0E00D7280D /* ViewerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewerManager.swift; path = Models/ViewerManager.swift; sourceTree = "<group>"; };
 		73CF1D8C1AA23FA500D7280D /* CLLocationCoordinate2D+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CLLocationCoordinate2D+Extensions.swift"; path = "Categories/CLLocationCoordinate2D+Extensions.swift"; sourceTree = "<group>"; };
@@ -79,7 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73CF1D481AA1582A00D7280D /* MapKit.framework in Frameworks */,
-				3B0D3716050AEBA3015D5F26 /* libPods.a in Frameworks */,
+				D49854F88F83DB2F52E364BF /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,8 +114,8 @@
 		73CF1D7E1AA17BD400D7280D /* Map Views */ = {
 			isa = PBXGroup;
 			children = (
-				73CF1D7C1AA17BD200D7280D /* ClusterView.swift */,
-				73CF1D841AA2322C00D7280D /* ViewerAnnotationView.swift */,
+				737712701AA2643C007BE4FE /* ClusterView.swift */,
+				737712711AA2643C007BE4FE /* ViewerAnnotationView.swift */,
 			);
 			name = "Map Views";
 			sourceTree = "<group>";
@@ -105,6 +123,7 @@
 		73CF1D811AA18D4A00D7280D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				737712681AA24EDA007BE4FE /* String+JSONExtensions.swift */,
 				73CF1D7F1AA18D4700D7280D /* UIView+AnimationExtensions.swift */,
 				73CF1D8C1AA23FA500D7280D /* CLLocationCoordinate2D+Extensions.swift */,
 			);
@@ -115,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				73CF1D8E1AA242E800D7280D /* Post.swift */,
+				7377127A1AA26D45007BE4FE /* Place.swift */,
+				7377126A1AA26040007BE4FE /* User.swift */,
 				73CF1D861AA2329A00D7280D /* Viewer.swift */,
 				73CF1D8B1AA23A1200D7280D /* Networking */,
 			);
@@ -125,6 +146,10 @@
 			isa = PBXGroup;
 			children = (
 				73CF1D891AA23A0E00D7280D /* ViewerManager.swift */,
+				737712781AA26A94007BE4FE /* APIManager.swift */,
+				737712641AA24B22007BE4FE /* TwitterManager.swift */,
+				7377127C1AA26EFD007BE4FE /* InstagramManager.swift */,
+				7377127E1AA2706E007BE4FE /* FoursquareManager.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -159,8 +184,8 @@
 				73F16D5C1AA1256400725D96 /* View Controllers */,
 				73CF1D7E1AA17BD400D7280D /* Map Views */,
 				73F16D511AA1171100725D96 /* Post Views */,
-				73F16D2D1AA112C100725D96 /* Supporting Files */,
 				73CF1D811AA18D4A00D7280D /* Categories */,
+				73F16D2D1AA112C100725D96 /* Supporting Files */,
 			);
 			path = supercluster;
 			sourceTree = "<group>";
@@ -171,6 +196,7 @@
 				73C7FBB21AA13042005708A3 /* supercluster-Bridging-Header.h */,
 				73F16D2E1AA112C100725D96 /* Info.plist */,
 				73C7FBB71AA13351005708A3 /* ClassExtensions.swift */,
+				737712661AA24CD3007BE4FE /* StreamReader.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -200,6 +226,7 @@
 				73F16D521AA1172900725D96 /* ImagePostView.xib */,
 				73C7FBB91AA134B8005708A3 /* TextPostView.swift */,
 				73C7FBBB1AA134C5005708A3 /* TextPostView.xib */,
+				7377126E1AA2642C007BE4FE /* LazyImageView.swift */,
 			);
 			name = "Post Views";
 			path = ..;
@@ -219,7 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				73CF1D471AA1582A00D7280D /* MapKit.framework */,
-				6E1431AE8FB49B5FA21CE4AD /* libPods.a */,
+				0D880FA3DF57C5C74CC52D12 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -245,6 +272,7 @@
 				73F16D271AA112C000725D96 /* Frameworks */,
 				73F16D281AA112C000725D96 /* Resources */,
 				54550E4C98EB046C57AA4FA4 /* Copy Pods Resources */,
+				0471CF197A64F2EA92803505 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -338,6 +366,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0471CF197A64F2EA92803505 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1C179C9E1B2BBE66F793E76A /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -375,19 +418,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				737712731AA2643C007BE4FE /* ViewerAnnotationView.swift in Sources */,
 				73C7FBBA1AA134B8005708A3 /* TextPostView.swift in Sources */,
-				73CF1D7D1AA17BD200D7280D /* ClusterView.swift in Sources */,
 				73F16D501AA1170900725D96 /* ImagePostView.swift in Sources */,
 				73CF1D8A1AA23A0E00D7280D /* ViewerManager.swift in Sources */,
-				73CF1D851AA2322C00D7280D /* ViewerAnnotationView.swift in Sources */,
+				737712651AA24B22007BE4FE /* TwitterManager.swift in Sources */,
 				73CF1D8F1AA242E800D7280D /* Post.swift in Sources */,
+				737712791AA26A94007BE4FE /* APIManager.swift in Sources */,
 				73F16D551AA121C800725D96 /* PostView.swift in Sources */,
 				73F16D301AA112C100725D96 /* AppDelegate.swift in Sources */,
+				7377127B1AA26D45007BE4FE /* Place.swift in Sources */,
 				73F16D5E1AA125B500725D96 /* MapViewController.swift in Sources */,
 				73CF1D8D1AA23FA500D7280D /* CLLocationCoordinate2D+Extensions.swift in Sources */,
+				737712721AA2643C007BE4FE /* ClusterView.swift in Sources */,
 				73CF1D871AA2329A00D7280D /* Viewer.swift in Sources */,
+				737712691AA24EDA007BE4FE /* String+JSONExtensions.swift in Sources */,
+				737712671AA24CD3007BE4FE /* StreamReader.swift in Sources */,
+				7377126B1AA26040007BE4FE /* User.swift in Sources */,
+				7377127F1AA2706E007BE4FE /* FoursquareManager.swift in Sources */,
 				73CF1D801AA18D4700D7280D /* UIView+AnimationExtensions.swift in Sources */,
+				7377127D1AA26EFD007BE4FE /* InstagramManager.swift in Sources */,
 				73C7FBB81AA13351005708A3 /* ClassExtensions.swift in Sources */,
+				7377126F1AA2642C007BE4FE /* LazyImageView.swift in Sources */,
 				73F16D581AA1251300725D96 /* PostsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

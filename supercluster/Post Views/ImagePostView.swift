@@ -60,6 +60,9 @@ class ImagePostView: PostView {
                     
                 case .Foursquare:
                     break
+                    
+                default:
+                    break
                 }
             }
         }

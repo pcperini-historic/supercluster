@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RFQuiltLayout.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3230CD510F7925C68DE4D826</key>
+		<key>49D0AF69F9124CBF87121F9A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AB5527B5ED93D41614234B7F</key>
+		<key>4E48206D213CB9E0B8392191</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E135C38921D7823A08B1BC33</key>
+		<key>8DF3B55404C177173F3682B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F7C86EE0DB447C42028215AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

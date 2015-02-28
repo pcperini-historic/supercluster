@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AB5527B5ED93D41614234B7F"
-               BuildableName = "libPods-RFQuiltLayout.a"
+               BlueprintIdentifier = "F7C86EE0DB447C42028215AD"
+               BuildableName = "RFQuiltLayout.framework"
                BlueprintName = "Pods-RFQuiltLayout"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

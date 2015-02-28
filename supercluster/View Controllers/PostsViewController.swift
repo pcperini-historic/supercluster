@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RFQuiltLayout
 
 class PostsViewController: UIViewController {
     // Views

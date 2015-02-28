@@ -8,6 +8,7 @@
 
 import Foundation
 import MapKit
+import SIOSocket
 
 protocol ViewerManagerDelegate {
     func viewerManager(viewManager: ViewerManager, didAddCoordinate coordinate: CLLocationCoordinate2D)
@@ -15,7 +16,9 @@ protocol ViewerManagerDelegate {
 }
 
 class ViewerManager: NSObject {
-    let host: String = "http://127.0.0.1:3000"
+    private class var host: String {
+        return "http://127.0.0.1:3000"
+    }
     
     private var socket: SIOSocket?
     var delegate: ViewerManagerDelegate
@@ -41,7 +44,7 @@ class ViewerManager: NSObject {
         self.delegate = delegate
         super.init()
         
-        SIOSocket.socketWithHost(host, response: { (socket: SIOSocket!) in
+        SIOSocket.socketWithHost(ViewerManager.host, response: { (socket: SIOSocket!) in
             socket.onConnect = {
                 println("connected")
             }

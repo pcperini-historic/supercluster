@@ -1,0 +1,6 @@
+framework module SIOSocket {
+  umbrella header "Pods-SIOSocket-umbrella.h"
+
+  export *
+  module * { export * }
+}
