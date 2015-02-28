@@ -14,6 +14,11 @@
 		73CF1D481AA1582A00D7280D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CF1D471AA1582A00D7280D /* MapKit.framework */; };
 		73CF1D7D1AA17BD200D7280D /* ClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1D7C1AA17BD200D7280D /* ClusterView.swift */; };
 		73CF1D801AA18D4700D7280D /* UIView+AnimationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1D7F1AA18D4700D7280D /* UIView+AnimationExtensions.swift */; };
+		73CF1D851AA2322C00D7280D /* ViewerAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1D841AA2322C00D7280D /* ViewerAnnotationView.swift */; };
+		73CF1D871AA2329A00D7280D /* Viewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1D861AA2329A00D7280D /* Viewer.swift */; };
+		73CF1D8A1AA23A0E00D7280D /* ViewerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1D891AA23A0E00D7280D /* ViewerManager.swift */; };
+		73CF1D8D1AA23FA500D7280D /* CLLocationCoordinate2D+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1D8C1AA23FA500D7280D /* CLLocationCoordinate2D+Extensions.swift */; };
+		73CF1D8F1AA242E800D7280D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF1D8E1AA242E800D7280D /* Post.swift */; };
 		73F16D301AA112C100725D96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F16D2F1AA112C100725D96 /* AppDelegate.swift */; };
 		73F16D351AA112C100725D96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F16D331AA112C100725D96 /* Main.storyboard */; };
 		73F16D371AA112C100725D96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73F16D361AA112C100725D96 /* Images.xcassets */; };
@@ -46,6 +51,11 @@
 		73CF1D471AA1582A00D7280D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		73CF1D7C1AA17BD200D7280D /* ClusterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClusterView.swift; path = Views/ClusterView.swift; sourceTree = "<group>"; };
 		73CF1D7F1AA18D4700D7280D /* UIView+AnimationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+AnimationExtensions.swift"; path = "Categories/UIView+AnimationExtensions.swift"; sourceTree = "<group>"; };
+		73CF1D841AA2322C00D7280D /* ViewerAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewerAnnotationView.swift; path = Views/ViewerAnnotationView.swift; sourceTree = "<group>"; };
+		73CF1D861AA2329A00D7280D /* Viewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Viewer.swift; path = Models/Viewer.swift; sourceTree = "<group>"; };
+		73CF1D891AA23A0E00D7280D /* ViewerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewerManager.swift; path = Models/ViewerManager.swift; sourceTree = "<group>"; };
+		73CF1D8C1AA23FA500D7280D /* CLLocationCoordinate2D+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CLLocationCoordinate2D+Extensions.swift"; path = "Categories/CLLocationCoordinate2D+Extensions.swift"; sourceTree = "<group>"; };
+		73CF1D8E1AA242E800D7280D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = Models/Post.swift; sourceTree = "<group>"; };
 		73F16D2A1AA112C000725D96 /* supercluster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = supercluster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F16D2E1AA112C100725D96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73F16D2F1AA112C100725D96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,20 +93,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		73CF1D7E1AA17BD400D7280D /* Views */ = {
+		73CF1D7E1AA17BD400D7280D /* Map Views */ = {
 			isa = PBXGroup;
 			children = (
 				73CF1D7C1AA17BD200D7280D /* ClusterView.swift */,
+				73CF1D841AA2322C00D7280D /* ViewerAnnotationView.swift */,
 			);
-			name = Views;
+			name = "Map Views";
 			sourceTree = "<group>";
 		};
 		73CF1D811AA18D4A00D7280D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
 				73CF1D7F1AA18D4700D7280D /* UIView+AnimationExtensions.swift */,
+				73CF1D8C1AA23FA500D7280D /* CLLocationCoordinate2D+Extensions.swift */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		73CF1D881AA2329F00D7280D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				73CF1D8E1AA242E800D7280D /* Post.swift */,
+				73CF1D861AA2329A00D7280D /* Viewer.swift */,
+				73CF1D8B1AA23A1200D7280D /* Networking */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		73CF1D8B1AA23A1200D7280D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				73CF1D891AA23A0E00D7280D /* ViewerManager.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		73F16D211AA112C000725D96 = {
@@ -125,8 +155,9 @@
 				73F16D2F1AA112C100725D96 /* AppDelegate.swift */,
 				73F16D361AA112C100725D96 /* Images.xcassets */,
 				73F16D381AA112C100725D96 /* LaunchScreen.xib */,
+				73CF1D881AA2329F00D7280D /* Models */,
 				73F16D5C1AA1256400725D96 /* View Controllers */,
-				73CF1D7E1AA17BD400D7280D /* Views */,
+				73CF1D7E1AA17BD400D7280D /* Map Views */,
 				73F16D511AA1171100725D96 /* Post Views */,
 				73F16D2D1AA112C100725D96 /* Supporting Files */,
 				73CF1D811AA18D4A00D7280D /* Categories */,
@@ -347,9 +378,14 @@
 				73C7FBBA1AA134B8005708A3 /* TextPostView.swift in Sources */,
 				73CF1D7D1AA17BD200D7280D /* ClusterView.swift in Sources */,
 				73F16D501AA1170900725D96 /* ImagePostView.swift in Sources */,
+				73CF1D8A1AA23A0E00D7280D /* ViewerManager.swift in Sources */,
+				73CF1D851AA2322C00D7280D /* ViewerAnnotationView.swift in Sources */,
+				73CF1D8F1AA242E800D7280D /* Post.swift in Sources */,
 				73F16D551AA121C800725D96 /* PostView.swift in Sources */,
 				73F16D301AA112C100725D96 /* AppDelegate.swift in Sources */,
 				73F16D5E1AA125B500725D96 /* MapViewController.swift in Sources */,
+				73CF1D8D1AA23FA500D7280D /* CLLocationCoordinate2D+Extensions.swift in Sources */,
+				73CF1D871AA2329A00D7280D /* Viewer.swift in Sources */,
 				73CF1D801AA18D4700D7280D /* UIView+AnimationExtensions.swift in Sources */,
 				73C7FBB81AA13351005708A3 /* ClassExtensions.swift in Sources */,
 				73F16D581AA1251300725D96 /* PostsViewController.swift in Sources */,

@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="znK-yq-r3A" customClass="RFQuiltLayout"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FBE-iV-EeK">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostView" id="FBE-iV-EeK">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -103,19 +103,28 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVf-te-9da" customClass="ClusterView" customModule="supercluster" customModuleProvider="target">
-                                <rect key="frame" x="270" y="270" width="60" height="60"/>
+                                <rect key="frame" x="240" y="250" width="120" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="b4A-Ff-aEy"/>
-                                    <constraint firstAttribute="height" constant="60" id="m1b-iF-qoX"/>
+                                    <constraint firstAttribute="width" constant="120" id="b4A-Ff-aEy"/>
+                                    <constraint firstAttribute="height" constant="120" id="m1b-iF-qoX"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="rotationDuration">
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rotatesClockwise" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rotatesClockwise" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="6ep-hk-KWr" appends="YES" id="vKf-Rz-Bk2"/>
@@ -127,7 +136,7 @@
                         <constraints>
                             <constraint firstItem="YKY-U3-CaR" firstAttribute="leading" secondItem="NYC-pZ-Euf" secondAttribute="leadingMargin" constant="-16" id="4my-vi-Ld1"/>
                             <constraint firstItem="WVf-te-9da" firstAttribute="centerX" secondItem="fdV-Za-hRI" secondAttribute="centerX" id="8wL-sR-P4P"/>
-                            <constraint firstItem="WVf-te-9da" firstAttribute="centerY" secondItem="fdV-Za-hRI" secondAttribute="centerY" id="AhS-xj-3D1"/>
+                            <constraint firstItem="WVf-te-9da" firstAttribute="centerY" secondItem="fdV-Za-hRI" secondAttribute="centerY" constant="10" id="AhS-xj-3D1"/>
                             <constraint firstItem="fdV-Za-hRI" firstAttribute="top" secondItem="NYC-pZ-Euf" secondAttribute="topMargin" id="afp-7f-hL7"/>
                             <constraint firstItem="YKY-U3-CaR" firstAttribute="top" secondItem="NYC-pZ-Euf" secondAttribute="topMargin" id="anP-YM-uaW"/>
                             <constraint firstItem="7O6-Ad-r00" firstAttribute="top" secondItem="fdV-Za-hRI" secondAttribute="bottom" id="gtz-Cy-yo4"/>

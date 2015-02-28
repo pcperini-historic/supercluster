@@ -9,6 +9,33 @@
 import UIKit
 
 @IBDesignable class ClusterView: UIView {
+    // Shadows
+    @IBInspectable var shadowOffset: CGSize = CGSize(width: 0, height: 0) {
+        didSet {
+            self.layer.shadowOffset = self.shadowOffset
+            self.updateShadow()
+        }
+    }
+    
+    @IBInspectable var shadowRadius: CGFloat = 0 {
+        didSet {
+            self.layer.shadowRadius = self.shadowRadius
+            self.updateShadow()
+        }
+    }
+    
+    @IBInspectable var shadowColor: UIColor = UIColor.clearColor() {
+        didSet {
+            self.layer.shadowColor = self.shadowColor.CGColor
+            self.updateShadow()
+        }
+    }
+    
+    private func updateShadow() {
+        self.layer.masksToBounds = false;
+        self.layer.shadowOpacity = 1.0;
+    }
+    
     // Animation
     @IBInspectable var rotatesClockwise: Bool = true {
         didSet {
@@ -55,7 +82,7 @@ import UIKit
     
     // Drawing
     private var rings: [UIView] = []
-    override func drawRect(rect: CGRect) {
+    override func layoutSubviews() {
         self.addRings()
     }
     
@@ -114,7 +141,7 @@ import UIKit
         thirdRing.addSubview(thirdRingFirstPip)
         
         var thirdRingSecondPip = UIView(frame: CGRect(
-            x: (thirdRing.bounds.width - 12.0) - 2.0,
+            x: (thirdRing.bounds.width - 12.0) - 9.0,
             y: (thirdRing.bounds.height - 12.0) / 9.0,
             width: 12.0,
             height: 12.0))

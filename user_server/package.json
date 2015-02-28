@@ -1,0 +1,17 @@
+{
+  "name": "mew",
+  "version": "0.2.0",
+  "description": "environment manager for MegaBits",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ryan hestin",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io":"1.1.x",
+    "redis":"0.10.x",
+    "async":"latest",
+    "socket.io-redis":"0.1.3"
+  }
+}

@@ -9,12 +9,6 @@
 import UIKit
 
 @IBDesignable class PostView: UICollectionViewCell {
-    enum SourceType {
-        case Twitter
-        case Instagram
-        case Foursquare
-    }
-    
     // Reuse
     override var reuseIdentifier: String {
         return className(self.dynamicType)

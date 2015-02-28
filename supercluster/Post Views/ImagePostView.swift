@@ -47,7 +47,7 @@ class ImagePostView: PostView {
         }
     }
     
-    var source: PostView.SourceType? {
+    var source: Post.SourceType? {
         didSet {
             self.sourceIconView?.image = nil
             if let source = self.source {
