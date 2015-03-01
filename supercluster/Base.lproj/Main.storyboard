@@ -76,6 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2020" y="40"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="WiQ-af-l4u">
@@ -97,7 +98,7 @@
                             </mapView>
                             <view alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKY-U3-CaR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
-                                <color key="backgroundColor" red="0.1098039225" green="0.14509804549999999" blue="0.19607843459999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.10980392156862745" green="0.14509803921568629" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="lie-yp-VBQ"/>
                                 </constraints>
@@ -117,7 +118,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5s-Lm-PSF" customClass="RingView" customModule="supercluster" customModuleProvider="target">
-                                <rect key="frame" x="297.5" y="297.5" width="5" height="5"/>
+                                <rect key="frame" x="297" y="297" width="5" height="5"/>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.74509803921568629" blue="0.80000000000000004" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.1333333333" green="0.74509803919999995" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -130,10 +131,31 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jR1-ng-nQP" customClass="IconButton" customModule="supercluster" customModuleProvider="target">
+                                <rect key="frame" x="472" y="573.5" width="149" height="149"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="149" id="Kx4-tL-6Ck"/>
+                                    <constraint firstAttribute="width" constant="149" id="mXX-JE-pH7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                <state key="normal" title="🚀">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rotation">
+                                        <real key="value" value="-44.899999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="shuttleButtonWasPressed:" destination="w0D-fV-xx9" eventType="touchUpInside" id="RJb-wH-0Lx"/>
+                                    <segue destination="vXZ-lx-hvc" kind="presentation" id="1c4-fM-Pcg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="YKY-U3-CaR" firstAttribute="leading" secondItem="NYC-pZ-Euf" secondAttribute="leadingMargin" constant="-16" id="4my-vi-Ld1"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="jR1-ng-nQP" secondAttribute="bottom" constant="-122.5" id="8Dw-nW-bD0"/>
                             <constraint firstItem="pKD-Nh-s6Q" firstAttribute="centerY" secondItem="fdV-Za-hRI" secondAttribute="centerY" id="CDu-iS-Cm1"/>
                             <constraint firstItem="pKD-Nh-s6Q" firstAttribute="centerX" secondItem="fdV-Za-hRI" secondAttribute="centerX" id="Ko9-8I-167"/>
                             <constraint firstItem="fdV-Za-hRI" firstAttribute="centerY" secondItem="O5s-Lm-PSF" secondAttribute="centerY" id="Rws-UT-ckZ"/>
@@ -142,6 +164,7 @@
                             <constraint firstItem="7O6-Ad-r00" firstAttribute="top" secondItem="fdV-Za-hRI" secondAttribute="bottom" id="gtz-Cy-yo4"/>
                             <constraint firstItem="fdV-Za-hRI" firstAttribute="leading" secondItem="NYC-pZ-Euf" secondAttribute="leadingMargin" constant="-16" id="hPo-6h-uex"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YKY-U3-CaR" secondAttribute="trailing" constant="-16" id="nMi-uy-XuG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jR1-ng-nQP" secondAttribute="trailing" constant="-37" id="ty0-6W-6GU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fdV-Za-hRI" secondAttribute="trailing" constant="-16" id="uTA-tA-FgQ"/>
                             <constraint firstItem="fdV-Za-hRI" firstAttribute="centerX" secondItem="O5s-Lm-PSF" secondAttribute="centerX" id="yFN-A9-JvK"/>
                         </constraints>
@@ -154,11 +177,13 @@
                         <outlet property="mapView" destination="fdV-Za-hRI" id="bLr-8T-biY"/>
                         <outlet property="outerRing" destination="pKD-Nh-s6Q" id="cWp-L7-kgS"/>
                         <outlet property="outerRingWidthConstraint" destination="hCi-zj-Adq" id="aa8-SR-EIt"/>
+                        <outlet property="shuttleButton" destination="jR1-ng-nQP" id="L06-h3-I68"/>
+                        <outlet property="shuttleButtonVerticalConstraint" destination="8Dw-nW-bD0" id="pml-qJ-tsJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUo-cp-lLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1309" y="44"/>
+            <point key="canvasLocation" x="1258" y="40"/>
         </scene>
     </scenes>
 </document>

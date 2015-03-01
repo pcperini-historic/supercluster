@@ -20,6 +20,7 @@
 		7377127F1AA2706E007BE4FE /* FoursquareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377127E1AA2706E007BE4FE /* FoursquareManager.swift */; };
 		7382819B1AA2779700F46162 /* twitter.json in Resources */ = {isa = PBXBuildFile; fileRef = 7382819A1AA2779700F46162 /* twitter.json */; };
 		7382819E1AA2813D00F46162 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382819D1AA2813D00F46162 /* RingView.swift */; };
+		738281A01AA2983400F46162 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382819F1AA2983400F46162 /* IconButton.swift */; };
 		73C7FBB81AA13351005708A3 /* ClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7FBB71AA13351005708A3 /* ClassExtensions.swift */; };
 		73C7FBBA1AA134B8005708A3 /* TextPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7FBB91AA134B8005708A3 /* TextPostView.swift */; };
 		73C7FBBC1AA134C5005708A3 /* TextPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73C7FBBB1AA134C5005708A3 /* TextPostView.xib */; };
@@ -68,6 +69,7 @@
 		7377127E1AA2706E007BE4FE /* FoursquareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoursquareManager.swift; path = Models/FoursquareManager.swift; sourceTree = "<group>"; };
 		7382819A1AA2779700F46162 /* twitter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = twitter.json; sourceTree = "<group>"; };
 		7382819D1AA2813D00F46162 /* RingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RingView.swift; path = "Map Views/RingView.swift"; sourceTree = "<group>"; };
+		7382819F1AA2983400F46162 /* IconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconButton.swift; path = "Map Views/IconButton.swift"; sourceTree = "<group>"; };
 		73C7FBB21AA13042005708A3 /* supercluster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "supercluster-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		73C7FBB71AA13351005708A3 /* ClassExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassExtensions.swift; sourceTree = "<group>"; };
 		73C7FBB91AA134B8005708A3 /* TextPostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextPostView.swift; path = "supercluster/Post Views/TextPostView.swift"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				737712701AA2643C007BE4FE /* ClusterView.swift */,
 				737712711AA2643C007BE4FE /* ViewerAnnotationView.swift */,
 				7382819D1AA2813D00F46162 /* RingView.swift */,
+				7382819F1AA2983400F46162 /* IconButton.swift */,
 			);
 			name = "Map Views";
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				737712731AA2643C007BE4FE /* ViewerAnnotationView.swift in Sources */,
 				73C7FBBA1AA134B8005708A3 /* TextPostView.swift in Sources */,
 				73F16D501AA1170900725D96 /* ImagePostView.swift in Sources */,
+				738281A01AA2983400F46162 /* IconButton.swift in Sources */,
 				73CF1D8A1AA23A0E00D7280D /* ViewerManager.swift in Sources */,
 				737712651AA24B22007BE4FE /* TwitterManager.swift in Sources */,
 				73CF1D8F1AA242E800D7280D /* Post.swift in Sources */,

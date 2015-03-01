@@ -9,8 +9,13 @@
 import Foundation
 
 extension UIView {
-    class func animate(animations: [(NSTimeInterval, () -> ())]) {
+    class func animate(animations: [(NSTimeInterval, () -> ())], completion: (() -> ())? = nil) {
+        println("animating \(animations.count)")
         if animations.count <= 0 {
+            if completion != nil {
+                completion!()
+            }
+            
             return
         }
         
@@ -18,7 +23,7 @@ extension UIView {
         var remainingAnimations = Array(animations[1..<animations.count])
         
         UIView.animateWithDuration(animationTuple.0, animations: animationTuple.1) { (completed: Bool) in
-            UIView.animate(remainingAnimations)
+            UIView.animate(remainingAnimations, completion: completion)
         }
     }
 }

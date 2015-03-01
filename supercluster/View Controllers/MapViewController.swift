@@ -38,6 +38,11 @@ class MapViewController: UIViewController {
     
     var viewerManager: ViewerManager?
     
+    // Shuttle Button
+    @IBOutlet var shuttleButton: IconButton?
+    @IBOutlet var shuttleButtonVerticalConstraint: NSLayoutConstraint?
+    var shuttleButtonIsShowing: Bool = false
+    
     // View Lifecycle
     override func viewDidLoad() {
         self.maxCameraAltitude = self.mapView!.camera.altitude
@@ -59,6 +64,12 @@ class MapViewController: UIViewController {
         }
     }
     
+    // Responders
+    @IBAction func shuttleButtonWasPressed(sender: IconButton) {
+        self.sendOutShuttleButton(toBottomEdge: false)
+    }
+    
+    // Visual Updaters
     func updateInnerRing(scale: CGFloat) {
         var modifiedScale = scale * 0.25
         
@@ -68,6 +79,10 @@ class MapViewController: UIViewController {
         if newWidth > self.outerRingWidthConstraint?.constant {
             newWidth = self.outerRingWidthConstraint!.constant
             newHeight = newWidth
+            
+            self.bringInShuttleButton()
+        } else {
+            self.sendOutShuttleButton()
         }
         
         self.innerRingHeightConstraint?.constant = newHeight
@@ -75,6 +90,51 @@ class MapViewController: UIViewController {
         
         self.innerRing?.setNeedsUpdateConstraints()
         self.innerRing?.setNeedsDisplay()
+    }
+    
+    func bringInShuttleButton() {
+        self.shuttleButtonIsShowing = true
+        self.shuttleButtonVerticalConstraint?.constant = 0
+        UIView.animateWithDuration(2.00, animations: {
+            self.shuttleButton?.layoutIfNeeded()
+            return
+        })
+    }
+    
+    func sendOutShuttleButton(toBottomEdge: Bool = true) {
+        if !self.shuttleButtonIsShowing {
+            return
+        }
+        
+        self.shuttleButtonIsShowing = false
+        if toBottomEdge {
+            UIView.animate([
+                (0.50, {
+                    self.shuttleButton?.rotation = 135
+                    return
+                }),
+                
+                (2.00, {
+                    self.shuttleButtonVerticalConstraint?.constant = toBottomEdge ? -200 : 500
+                    self.shuttleButton?.layoutIfNeeded()
+                })
+            ], completion: {
+                self.shuttleButton?.rotation = -45
+                return
+            })
+        } else {
+            UIView.animate([
+                (0.25, {
+                    self.shuttleButtonVerticalConstraint?.constant = toBottomEdge ? -200 : 500
+                    self.shuttleButton?.layoutIfNeeded()
+                })
+            ], completion: {
+                self.shuttleButton?.rotation = -45
+                self.shuttleButtonVerticalConstraint?.constant = -200
+                self.shuttleButton?.setNeedsUpdateConstraints()
+                return
+            })
+        }
     }
 }
 
