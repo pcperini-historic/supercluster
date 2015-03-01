@@ -183,7 +183,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="shuttleButtonWasPressed:" destination="w0D-fV-xx9" eventType="touchUpInside" id="RJb-wH-0Lx"/>
-                                    <segue destination="vXZ-lx-hvc" kind="presentation" id="1c4-fM-Pcg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -214,6 +213,7 @@
                         <outlet property="outerRingWidthConstraint" destination="hCi-zj-Adq" id="aa8-SR-EIt"/>
                         <outlet property="shuttleButton" destination="jR1-ng-nQP" id="L06-h3-I68"/>
                         <outlet property="shuttleButtonVerticalConstraint" destination="8Dw-nW-bD0" id="pml-qJ-tsJ"/>
+                        <segue destination="vXZ-lx-hvc" kind="presentation" identifier="PostList" id="bp7-Jx-dch"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUo-cp-lLn" userLabel="First Responder" sceneMemberID="firstResponder"/>

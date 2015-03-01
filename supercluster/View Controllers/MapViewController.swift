@@ -52,6 +52,10 @@ class MapViewController: UIViewController {
         self.mapViewPinchGestureRecognizer?.addTarget(self, action: "mapViewPinchGestureWasRecognized:")
     }
     
+    override func viewDidAppear(animated: Bool) {
+        self.updateInnerRing(1.0)
+    }
+    
     // Gestures
     func mapViewPinchGestureWasRecognized(recognizer: UIPinchGestureRecognizer) {
         switch recognizer.state {
@@ -72,7 +76,7 @@ class MapViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var postsVC = segue.destinationViewController as PostsViewController
         postsVC.backgroundImage = self.view.snapshot().applyBlurWithRadius(8,
-            tintColor: UIColor(white: 0.95, alpha: 0.40),
+            tintColor: UIColor(red: 0.10, green: 0.15, blue: 0.20, alpha: 0.40),
             saturationDeltaFactor: 1.8,
             maskImage: nil)
         
@@ -145,16 +149,51 @@ class MapViewController: UIViewController {
                 return
             })
         } else {
-            UIView.animate([
-                (0.25, {
-                    self.shuttleButtonVerticalConstraint?.constant = toBottomEdge ? -200 : 500
-                    self.shuttleButton?.layoutIfNeeded()
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.25 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                UIView.animate([
+                    (0.04, {
+                        self.shuttleButton?.rotation = -50
+                        return
+                    }),
+                    
+                    (0.08, {
+                        self.shuttleButton?.rotation = -40
+                        return
+                    }),
+                    
+                    (0.04, {
+                        self.shuttleButton?.rotation = -45
+                        return
+                    }),
+                    
+                    (0.04, {
+                        self.shuttleButton?.rotation = -50
+                        return
+                    }),
+                    
+                    (0.08, {
+                        self.shuttleButton?.rotation = -40
+                        return
+                    }),
+                    
+                    (0.04, {
+                        self.shuttleButton?.rotation = -45
+                        return
+                    }),
+                    
+                    (0.25, {
+                        self.shuttleButtonVerticalConstraint?.constant = toBottomEdge ? -200 : 500
+                        self.shuttleButton?.layoutIfNeeded()
+                    })
+                ], completion: {
+                    self.shuttleButton?.rotation = -45
+                    self.shuttleButtonVerticalConstraint?.constant = -200
+                    self.shuttleButton?.setNeedsUpdateConstraints()
+                    
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.05 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                        self.performSegueWithIdentifier("PostList", sender: self.shuttleButton)
+                    })
                 })
-            ], completion: {
-                self.shuttleButton?.rotation = -45
-                self.shuttleButtonVerticalConstraint?.constant = -200
-                self.shuttleButton?.setNeedsUpdateConstraints()
-                return
             })
         }
     }
@@ -173,7 +212,7 @@ extension MapViewController: MKMapViewDelegate {
                 
                 // Animate size
                 UIView.animate([
-                    (2.0, {
+                    (3.0, {
                         self.innerRingHeightConstraint?.constant = self.outerRingWidthConstraint!.constant
                         self.innerRingWidthConstraint?.constant = self.outerRingWidthConstraint!.constant
                         
@@ -185,7 +224,7 @@ extension MapViewController: MKMapViewDelegate {
                 let cornerRadiusAnimation = CABasicAnimation(keyPath: "cornerRadius")
                 cornerRadiusAnimation.fromValue = self.innerRingWidthConstraint!.constant / 2.0
                 cornerRadiusAnimation.toValue = self.outerRingWidthConstraint!.constant / 2.0
-                cornerRadiusAnimation.duration = 2.0
+                cornerRadiusAnimation.duration = 3.0
                 cornerRadiusAnimation.fillMode = kCAFillModeBoth
                 
                 self.innerRing?.layer.addAnimation(cornerRadiusAnimation, forKey: "cornerRadius")
@@ -197,7 +236,6 @@ extension MapViewController: MKMapViewDelegate {
     }
     
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
-        println("\(self.mapView?.camera.altitude)")
         self.updateInnerRing(1.0)
         self.viewerManager?.viewingCoordinate = mapView.centerCoordinate
     }
