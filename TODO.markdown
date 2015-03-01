@@ -1,5 +1,4 @@
-Map “pog” is only enabled at valid radii
-Map “pog” or map can be double-tapped (at high levels) to zoom to valid radii
+Idle animations - make it feel alive
 Map “pog” can be tapped to flip to posts view
 
 Create API handlers to make requests / generate Posts

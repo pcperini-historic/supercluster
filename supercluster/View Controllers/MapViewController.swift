@@ -12,67 +12,75 @@ import MapKit
 class MapViewController: UIViewController {
     // Maps
     @IBOutlet var mapView: MKMapView?
+    var mapViewPinchGestureRecognizer: UIPinchGestureRecognizer? {
+        get {
+            for recognizer: UIGestureRecognizer in ((self.mapView?.subviews[0] as UIView).gestureRecognizers as [UIGestureRecognizer]) {
+                if let pinchRecognizer = recognizer as? UIPinchGestureRecognizer {
+                    return pinchRecognizer
+                }
+            }
+            
+            return nil
+        }
+    }
+    
+    var lastCameraDistance: CLLocationDistance?
     let searchableCameraAltitude: CLLocationDistance = 600_000.00
+    var maxCameraAltitude: CLLocationDistance = -1
     
     // Cluster & Viewers
-    @IBOutlet var clusterView: ClusterView?
+    @IBOutlet var outerRing: RingView?
+    @IBOutlet var innerRing: RingView?
+    @IBOutlet var innerRingWidthConstraint: NSLayoutConstraint?
+    @IBOutlet var innerRingHeightConstraint: NSLayoutConstraint?
+    @IBOutlet var outerRingWidthConstraint: NSLayoutConstraint?
+    var innerRingInitialSize: CGSize = CGSizeZero
+    
     var viewerManager: ViewerManager?
     
     // View Lifecycle
     override func viewDidLoad() {
-        self.clusterSingleTapGestureRecognizer?.requireGestureRecognizerToFail(self.clusterDoubleTapGestureRecognizer!)
+        self.maxCameraAltitude = self.mapView!.camera.altitude
+        self.innerRingInitialSize = CGSizeMake(self.innerRingWidthConstraint!.constant, self.innerRingHeightConstraint!.constant)
+        
         self.viewerManager = ViewerManager(delegate: self)
+        self.mapViewPinchGestureRecognizer?.addTarget(self, action: "mapViewPinchGestureWasRecognized:")
     }
     
     // Gestures
-    @IBOutlet var clusterSingleTapGestureRecognizer: UITapGestureRecognizer?
-    @IBOutlet var clusterDoubleTapGestureRecognizer: UITapGestureRecognizer?
-    @IBAction func clusterWasTapped(recognizer: UITapGestureRecognizer) {
-//        switch recognizer.numberOfTapsRequired {
-//        case 1:
-//            break;
-//            
-//        case 2:
-//            if var camera: MKMapCamera = self.mapView?.camera.copy() as? MKMapCamera {
-//                UIView.animate([
-//                    // Bounce Cluster
-//                    (0.15, {
-//                        self.clusterView?.layer.transform = CATransform3DMakeScale(1.25, 1.25, 1.00)
-//                        return
-//                    }),
-//                    (0.15, {
-//                        self.clusterView?.layer.transform = CATransform3DMakeScale(0.75, 0.75, 1.00)
-//                        return
-//                    }),
-//                    (0.05, {
-//                        self.clusterView?.layer.transform = CATransform3DIdentity
-//                        return
-//                    }),
-//                    
-//                    (0.00, {
-//                        // Zoom map
-//                        camera.altitude /= 10
-//                        self.mapView?.setCamera(camera,
-//                            animated: true)
-//                    }),
-//                ])
-//            }
-//            
-//            break;
-//            
-//        default:
-//            break;
-//        }
+    func mapViewPinchGestureWasRecognized(recognizer: UIPinchGestureRecognizer) {
+        switch recognizer.state {
+        case UIGestureRecognizerState.Changed:
+            self.updateInnerRing(recognizer.scale)
+            break
+            
+        default:
+            break
+        }
+    }
+    
+    func updateInnerRing(scale: CGFloat) {
+        var modifiedScale = scale * 0.25
+        
+        var newHeight = modifiedScale * CGFloat(self.maxCameraAltitude / self.mapView!.camera.altitude) * self.innerRingInitialSize.height
+        var newWidth = modifiedScale * CGFloat(self.maxCameraAltitude / self.mapView!.camera.altitude) * self.innerRingInitialSize.width
+        
+        if newWidth > self.outerRingWidthConstraint?.constant {
+            newWidth = self.outerRingWidthConstraint!.constant
+            newHeight = newWidth
+        }
+        
+        self.innerRingHeightConstraint?.constant = newHeight
+        self.innerRingWidthConstraint?.constant = newWidth
+        
+        self.innerRing?.setNeedsUpdateConstraints()
+        self.innerRing?.setNeedsDisplay()
     }
 }
 
 extension MapViewController: MKMapViewDelegate {
-    func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {        
-//        if self.mapView?.camera.altitude <= searchableCameraAltitude {
-//            self.clusterView?.tintColor = UIColor(red: 0.13, green: 0.75, blue: 0.80, alpha: 1.00)
-//            self.clusterView?.rotationDuration = 2
-//        }
-        
+    func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
+        self.updateInnerRing(1.0)
         self.viewerManager?.viewingCoordinate = mapView.centerCoordinate
     }
     
