@@ -18,7 +18,6 @@ import UIKit
     override func drawRect(rect: CGRect) {
         self.layer.borderColor = self.tintColor.CGColor
         self.layer.cornerRadius = self.bounds.width / 2.0
-        println("> \(self.bounds)")
         self.layer.masksToBounds = true
     }
 }

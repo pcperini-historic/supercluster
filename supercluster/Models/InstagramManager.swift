@@ -18,7 +18,7 @@ class InstagramManager: APIManager {
         let response: NSDictionary = (NSString(contentsOfFile: self.host, encoding: NSUTF8StringEncoding, error: nil) as String).jsonObject as NSDictionary
         
         var posts: [Post] = []
-        for entry: NSDictionary in (response["data"] as [NSDictionary]) {
+        for entry: NSDictionary in shuffle(response["data"] as [NSDictionary]) {
             let post = self.postFromDictionary(entry)
             
             if !post.place.isInRadius(radius, fromCoordinate: coordinate) {

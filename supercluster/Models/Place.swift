@@ -19,7 +19,6 @@ struct Place {
         let placeLocation = CLLocation(latitude: self.coordinate.latitude, longitude: self.coordinate.longitude)
         let centerLocation = CLLocation(latitude: coord.latitude, longitude: coord.longitude)
         
-        println("dist: \(placeLocation.distanceFromLocation(centerLocation)), radius: \(radius)")
         return placeLocation.distanceFromLocation(centerLocation) <= radius
     }
 }

@@ -17,7 +17,7 @@ protocol ViewerManagerDelegate {
 
 class ViewerManager: NSObject {
     private class var host: String {
-        return "http://127.0.0.1:3000"
+        return "ws://127.0.0.1:3000"
     }
     
     private var socket: SIOSocket?
@@ -45,24 +45,20 @@ class ViewerManager: NSObject {
         super.init()
         
         SIOSocket.socketWithHost(ViewerManager.host, response: { (socket: SIOSocket!) in
-            socket.onConnect = {
-                println("connected")
-            }
-            
-            socket.onReconnect = { (retries: Int) in
-                println("reconnected")
-            }
-            
             socket.on("update", callback: { (arguments: [AnyObject]!) in
-                let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(arguments[0] as NSNumber),
-                    longitude: CLLocationDegrees(arguments[1] as NSNumber))
-                self.delegate.viewerManager(self, didAddCoordinate: location)
+                dispatch_async(dispatch_get_main_queue(), {
+                    let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(arguments[0] as NSNumber),
+                        longitude: CLLocationDegrees(arguments[1] as NSNumber))
+                    self.delegate.viewerManager(self, didAddCoordinate: location)
+                })
             })
             
             socket.on("disappear", callback: { (arguments: [AnyObject]!) in
-                let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(arguments[0] as NSNumber),
-                    longitude: CLLocationDegrees(arguments[1] as NSNumber))
-                self.delegate.viewerManager(self, didRemoveCoordinate: location)
+                dispatch_async(dispatch_get_main_queue(), {
+                    let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(arguments[0] as NSNumber),
+                        longitude: CLLocationDegrees(arguments[1] as NSNumber))
+                    self.delegate.viewerManager(self, didRemoveCoordinate: location)
+                })
             })
             
             self.socket = socket

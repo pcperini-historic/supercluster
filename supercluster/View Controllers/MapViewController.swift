@@ -249,6 +249,12 @@ extension MapViewController: MKMapViewDelegate {
 
 extension MapViewController: ViewerManagerDelegate {
     func viewerManager(viewManager: ViewerManager, didAddCoordinate coordinate: CLLocationCoordinate2D) {
+        for annotation: MKAnnotation in self.mapView!.annotations as [MKAnnotation] {
+            if coordinate == annotation.coordinate {
+                return
+            }
+        }
+        
         self.mapView?.addAnnotation(Viewer(coordinate: coordinate))
     }
     
