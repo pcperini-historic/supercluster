@@ -19,7 +19,7 @@ struct Post {
     var text: String?
     var imageURL: NSURL?
     var source: SourceType
-    var user: User
+    var user: User?
     var place: Place
     var pubdate: NSDate
 }

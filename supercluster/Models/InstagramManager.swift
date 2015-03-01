@@ -11,15 +11,24 @@ import MapKit
 
 class InstagramManager: APIManager {
     override internal class var host: String {
-        return ""
+        return NSBundle.mainBundle().pathForResource("instagram_final", ofType: "json")!
     }
     
-    override class func posts(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance) -> [Post] {
+    override class func posts(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance, size: Int = 20) -> [Post] {
         let response: NSDictionary = (NSString(contentsOfFile: self.host, encoding: NSUTF8StringEncoding, error: nil) as String).jsonObject as NSDictionary
         
         var posts: [Post] = []
         for entry: NSDictionary in (response["data"] as [NSDictionary]) {
+            let post = self.postFromDictionary(entry)
+            
+            if !post.place.isInRadius(radius, fromCoordinate: coordinate) {
+                continue
+            }
+            
             posts.append(self.postFromDictionary(entry))
+            if posts.count >= size {
+                break
+            }
         }
         
         return posts
@@ -63,6 +72,8 @@ extension Place {
         
         var placeName: String? = instagramData["name"] as? String
         self.init(coordinate: coordinate,
-            name: placeName)
+            name: placeName,
+            userCount: nil,
+            category: nil)
     }
 }

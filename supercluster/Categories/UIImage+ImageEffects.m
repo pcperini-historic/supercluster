@@ -95,6 +95,9 @@
 
 #import "UIImage+ImageEffects.h"
 
+// This method requires ImageIO.framework
+#import <ImageIO/ImageIO.h>
+
 @import Accelerate;
 #import <float.h>
 
@@ -274,5 +277,24 @@
     return outputImage;
 }
 
++ (CGSize)sizeOfImageAtURL:(NSURL *)imageURL
+{
+    // With CGImageSource we avoid loading the whole image into memory
+    CGSize imageSize = CGSizeZero;
+    CGImageSourceRef source = CGImageSourceCreateWithURL((CFURLRef)imageURL, NULL);
+    if (source) {
+        NSDictionary *options = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:(NSString *)kCGImageSourceShouldCache];
+        CFDictionaryRef properties = (__bridge CFDictionaryRef)((NSDictionary *)CFBridgingRelease(CGImageSourceCopyPropertiesAtIndex(source, 0, (CFDictionaryRef)options)));
+        if (properties) {
+            NSNumber *width = [(__bridge NSDictionary *)properties objectForKey:(NSString *)kCGImagePropertyPixelWidth];
+            NSNumber *height = [(__bridge NSDictionary *)properties objectForKey:(NSString *)kCGImagePropertyPixelHeight];
+            if ((width != nil) && (height != nil))
+                imageSize = CGSizeMake(width.floatValue, height.floatValue);
+            CFRelease(properties);
+        }
+        CFRelease(source);
+    }
+    return imageSize;
+}
 
 @end

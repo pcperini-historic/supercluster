@@ -11,7 +11,7 @@ import MapKit
 
 class TwitterManager: APIManager {
     override internal class var host: String {
-        return NSBundle.mainBundle().pathForResource("twitter", ofType: "json")!
+        return NSBundle.mainBundle().pathForResource("twitter_final", ofType: "txt")!
     }
     
     override internal class func postFromDictionary(dictionary: NSDictionary) -> Post {
@@ -22,9 +22,9 @@ class TwitterManager: APIManager {
 extension Post {
     init(tweetData: NSDictionary) {
         var userData: NSDictionary = tweetData["user"] as NSDictionary
-
+        
         var imageURL: NSURL?
-        if let imageURLString = tweetData["extended_entities"]?["media_url"] as? String {
+        if let imageURLString = ((tweetData["extended_entities"]?["media"] as? NSArray)?[0] as? NSDictionary)?["media_url"] as? String {
              imageURL = NSURL(string: imageURLString)
         }
 
@@ -54,6 +54,8 @@ extension Place {
         
         var placeName: String? = tweetData["place"]?["name"] as? String
         self.init(coordinate: coordinate,
-            name: placeName)
+            name: placeName,
+            userCount: nil,
+            category: nil)
     }
 }

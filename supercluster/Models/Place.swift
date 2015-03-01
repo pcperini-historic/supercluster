@@ -12,4 +12,14 @@ import MapKit
 struct Place {
     var coordinate: CLLocationCoordinate2D
     var name: String?
+    var userCount: Int?
+    var category: String?
+    
+    func isInRadius(radius: CLLocationDistance, fromCoordinate coord: CLLocationCoordinate2D) -> Bool {
+        let placeLocation = CLLocation(latitude: self.coordinate.latitude, longitude: self.coordinate.longitude)
+        let centerLocation = CLLocation(latitude: coord.latitude, longitude: coord.longitude)
+        
+        println("dist: \(placeLocation.distanceFromLocation(centerLocation)), radius: \(radius)")
+        return placeLocation.distanceFromLocation(centerLocation) <= radius
+    }
 }

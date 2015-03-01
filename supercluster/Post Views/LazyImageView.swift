@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class LazyImageView: UIImageView {
+@IBDesignable class LazyImageView: UIImageView {
     var imageURL: NSURL? {
         didSet {
             if let path: String = self.imageURL?.absoluteString {
@@ -17,6 +17,19 @@ class LazyImageView: UIImageView {
                     self.image = UIImage(data: data as NSData)
                 })
             }
+        }
+    }
+    
+    // Border
+    @IBInspectable var borderColor: UIColor = UIColor.clearColor() {
+        didSet {
+            self.layer.borderColor = self.borderColor.CGColor
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat = 0 {
+        didSet {
+            self.layer.borderWidth = self.borderWidth
         }
     }
 }

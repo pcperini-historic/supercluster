@@ -23,13 +23,15 @@ class TextPostView: PostView {
         let newTextViewSize = cell.textView!.bounds.size
         
         size.height += (newTextViewSize.height - originalTextViewSize.height)
+        size.width = UIScreen.mainScreen().bounds.width - 20
+        
         return size
     }
     
     // Author
-    @IBOutlet private var avatarView: LazyImageView?
-    @IBOutlet private var handleLabel: UILabel?
-    @IBOutlet private var sourceIconView: UIImageView?
+    @IBOutlet internal var avatarView: LazyImageView?
+    @IBOutlet internal var handleLabel: UILabel?
+    @IBOutlet internal var sourceIconView: UIImageView?
     
     var avatarImageURL: NSURL? {
         didSet {
@@ -53,12 +55,15 @@ class TextPostView: PostView {
             if let source = self.source {
                 switch source {
                 case .Twitter:
+                    self.sourceIconView?.image = UIImage(named: "Twitter")
                     break
                     
                 case .Instagram:
+                    self.sourceIconView?.image = UIImage(named: "Instagram")
                     break
                     
                 case .Foursquare:
+                    self.sourceIconView?.image = UIImage(named: "Foursquare")
                     break
                     
                 default:
@@ -69,7 +74,7 @@ class TextPostView: PostView {
     }
     
     // Text
-    @IBOutlet private var textView: UITextView?
+    @IBOutlet internal var textView: UITextView?
     var text: String? {
         get {
             return self.textView?.text
@@ -81,8 +86,8 @@ class TextPostView: PostView {
     }
     
     // Metadata
-    @IBOutlet private var pubdateLabel: UILabel?
-    @IBOutlet private var placeLabel: UILabel?
+    @IBOutlet internal var pubdateLabel: UILabel?
+    @IBOutlet internal var placeLabel: UILabel?
     
     var pubdate: NSDate? {
         didSet {

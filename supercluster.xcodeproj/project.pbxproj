@@ -23,6 +23,14 @@
 		738281A01AA2983400F46162 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382819F1AA2983400F46162 /* IconButton.swift */; };
 		7398D6431AA2B218006E1D32 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 7398D6421AA2B218006E1D32 /* UIImage+ImageEffects.m */; };
 		7398D6461AA2C663006E1D32 /* UIView+NibExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7398D6451AA2C663006E1D32 /* UIView+NibExtensions.m */; };
+		7398D6481AA2D25B006E1D32 /* ImagePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398D6471AA2D25B006E1D32 /* ImagePostView.swift */; };
+		7398D64A1AA2D269006E1D32 /* ImagePostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7398D6491AA2D269006E1D32 /* ImagePostView.xib */; };
+		7398D6511AA2D729006E1D32 /* foursquare_final.json in Resources */ = {isa = PBXBuildFile; fileRef = 7398D64C1AA2D729006E1D32 /* foursquare_final.json */; };
+		7398D6521AA2D729006E1D32 /* instagram_final.json in Resources */ = {isa = PBXBuildFile; fileRef = 7398D64D1AA2D729006E1D32 /* instagram_final.json */; };
+		7398D6561AA2DDEE006E1D32 /* CheckinPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398D6551AA2DDEE006E1D32 /* CheckinPostView.swift */; };
+		7398D6581AA2DE0F006E1D32 /* CheckinPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7398D6571AA2DE0F006E1D32 /* CheckinPostView.xib */; };
+		7398D65A1AA2E0BB006E1D32 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398D6591AA2E0BB006E1D32 /* PostManager.swift */; };
+		7398D65C1AA2F9CF006E1D32 /* twitter_final.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7398D65B1AA2F9CF006E1D32 /* twitter_final.txt */; };
 		73C7FBB81AA13351005708A3 /* ClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7FBB71AA13351005708A3 /* ClassExtensions.swift */; };
 		73C7FBBA1AA134B8005708A3 /* TextPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7FBB91AA134B8005708A3 /* TextPostView.swift */; };
 		73C7FBBC1AA134C5005708A3 /* TextPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73C7FBBB1AA134C5005708A3 /* TextPostView.xib */; };
@@ -74,6 +82,14 @@
 		7398D6421AA2B218006E1D32 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Categories/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		7398D6441AA2C663006E1D32 /* UIView+NibExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+NibExtensions.h"; path = "Categories/UIView+NibExtensions.h"; sourceTree = "<group>"; };
 		7398D6451AA2C663006E1D32 /* UIView+NibExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+NibExtensions.m"; path = "Categories/UIView+NibExtensions.m"; sourceTree = "<group>"; };
+		7398D6471AA2D25B006E1D32 /* ImagePostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePostView.swift; path = "supercluster/Post Views/ImagePostView.swift"; sourceTree = "<group>"; };
+		7398D6491AA2D269006E1D32 /* ImagePostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImagePostView.xib; path = "supercluster/Post Views/ImagePostView.xib"; sourceTree = "<group>"; };
+		7398D64C1AA2D729006E1D32 /* foursquare_final.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = foursquare_final.json; sourceTree = "<group>"; };
+		7398D64D1AA2D729006E1D32 /* instagram_final.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = instagram_final.json; sourceTree = "<group>"; };
+		7398D6551AA2DDEE006E1D32 /* CheckinPostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckinPostView.swift; path = "supercluster/Map Views/CheckinPostView.swift"; sourceTree = "<group>"; };
+		7398D6571AA2DE0F006E1D32 /* CheckinPostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CheckinPostView.xib; path = "supercluster/Map Views/CheckinPostView.xib"; sourceTree = "<group>"; };
+		7398D6591AA2E0BB006E1D32 /* PostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostManager.swift; path = Models/PostManager.swift; sourceTree = "<group>"; };
+		7398D65B1AA2F9CF006E1D32 /* twitter_final.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = twitter_final.txt; sourceTree = "<group>"; };
 		73C7FBB21AA13042005708A3 /* supercluster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "supercluster-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		73C7FBB71AA13351005708A3 /* ClassExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassExtensions.swift; sourceTree = "<group>"; };
 		73C7FBB91AA134B8005708A3 /* TextPostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextPostView.swift; path = "supercluster/Post Views/TextPostView.swift"; sourceTree = "<group>"; };
@@ -122,7 +138,10 @@
 		7382819C1AA2779B00F46162 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				7398D64C1AA2D729006E1D32 /* foursquare_final.json */,
+				7398D64D1AA2D729006E1D32 /* instagram_final.json */,
 				7382819A1AA2779700F46162 /* twitter.json */,
+				7398D65B1AA2F9CF006E1D32 /* twitter_final.txt */,
 			);
 			name = Demo;
 			sourceTree = "<group>";
@@ -159,6 +178,7 @@
 				7377127A1AA26D45007BE4FE /* Place.swift */,
 				7377126A1AA26040007BE4FE /* User.swift */,
 				73CF1D861AA2329A00D7280D /* Viewer.swift */,
+				7398D6591AA2E0BB006E1D32 /* PostManager.swift */,
 				73CF1D8B1AA23A1200D7280D /* Networking */,
 			);
 			name = Models;
@@ -247,6 +267,10 @@
 				73F16D541AA121C800725D96 /* PostView.swift */,
 				73C7FBB91AA134B8005708A3 /* TextPostView.swift */,
 				73C7FBBB1AA134C5005708A3 /* TextPostView.xib */,
+				7398D6471AA2D25B006E1D32 /* ImagePostView.swift */,
+				7398D6491AA2D269006E1D32 /* ImagePostView.xib */,
+				7398D6551AA2DDEE006E1D32 /* CheckinPostView.swift */,
+				7398D6571AA2DE0F006E1D32 /* CheckinPostView.xib */,
 				7377126E1AA2642C007BE4FE /* LazyImageView.swift */,
 			);
 			name = "Post Views";
@@ -369,11 +393,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7398D6521AA2D729006E1D32 /* instagram_final.json in Resources */,
 				73F16D351AA112C100725D96 /* Main.storyboard in Resources */,
 				73C7FBBC1AA134C5005708A3 /* TextPostView.xib in Resources */,
+				7398D64A1AA2D269006E1D32 /* ImagePostView.xib in Resources */,
+				7398D6511AA2D729006E1D32 /* foursquare_final.json in Resources */,
+				7398D6581AA2DE0F006E1D32 /* CheckinPostView.xib in Resources */,
 				73F16D3A1AA112C100725D96 /* LaunchScreen.xib in Resources */,
 				7382819B1AA2779700F46162 /* twitter.json in Resources */,
 				73F16D371AA112C100725D96 /* Images.xcassets in Resources */,
+				7398D65C1AA2F9CF006E1D32 /* twitter_final.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,8 +479,10 @@
 				73F16D301AA112C100725D96 /* AppDelegate.swift in Sources */,
 				7377127B1AA26D45007BE4FE /* Place.swift in Sources */,
 				73F16D5E1AA125B500725D96 /* MapViewController.swift in Sources */,
+				7398D65A1AA2E0BB006E1D32 /* PostManager.swift in Sources */,
 				73CF1D8D1AA23FA500D7280D /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				7382819E1AA2813D00F46162 /* RingView.swift in Sources */,
+				7398D6481AA2D25B006E1D32 /* ImagePostView.swift in Sources */,
 				7398D6431AA2B218006E1D32 /* UIImage+ImageEffects.m in Sources */,
 				737712721AA2643C007BE4FE /* ClusterView.swift in Sources */,
 				73CF1D871AA2329A00D7280D /* Viewer.swift in Sources */,
@@ -460,6 +491,7 @@
 				737712671AA24CD3007BE4FE /* StreamReader.swift in Sources */,
 				7377126B1AA26040007BE4FE /* User.swift in Sources */,
 				7377127F1AA2706E007BE4FE /* FoursquareManager.swift in Sources */,
+				7398D6561AA2DDEE006E1D32 /* CheckinPostView.swift in Sources */,
 				73CF1D801AA18D4700D7280D /* UIView+AnimationExtensions.swift in Sources */,
 				7377127D1AA26EFD007BE4FE /* InstagramManager.swift in Sources */,
 				73C7FBB81AA13351005708A3 /* ClassExtensions.swift in Sources */,

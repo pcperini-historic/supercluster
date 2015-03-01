@@ -25,9 +25,8 @@ class MapViewController: UIViewController {
         }
     }
     
-    var lastCameraDistance: CLLocationDistance?
-    let searchableCameraAltitude: CLLocationDistance = 600_000.00
     var maxCameraAltitude: CLLocationDistance = -1
+    var hasZoomedInitialy: Bool = false
     
     // Cluster & Viewers
     @IBOutlet var outerRing: RingView?
@@ -51,11 +50,6 @@ class MapViewController: UIViewController {
         
         self.viewerManager = ViewerManager(delegate: self)
         self.mapViewPinchGestureRecognizer?.addTarget(self, action: "mapViewPinchGestureWasRecognized:")
-    }
-    
-    // FUCK THIS
-    override func viewDidAppear(animated: Bool) {
-        self.bringInShuttleButton()
     }
     
     // Gestures
@@ -84,8 +78,17 @@ class MapViewController: UIViewController {
         
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(CLLocation(latitude: self.mapView!.centerCoordinate.latitude, longitude: self.mapView!.centerCoordinate.longitude), completionHandler: { (placemarks: [AnyObject]!, _) in
-            postsVC.title = placemarks[0].name
+            postsVC.title = placemarks[0].locality
         })
+        
+        let ringRegion = self.mapView!.convertRect(self.innerRing!.frame, toRegionFromView: self.view)
+        
+        let centerLocation = CLLocation(latitude: ringRegion.center.latitude, longitude: ringRegion.center.longitude)
+        let satelliteLocation = CLLocation(latitude: ringRegion.center.latitude + (ringRegion.span.latitudeDelta / 2.0),
+            longitude: ringRegion.center.longitude + (ringRegion.span.longitudeDelta / 2.0))
+        
+        postsVC.setCoordinate(self.mapView!.centerCoordinate,
+            radius: centerLocation.distanceFromLocation(satelliteLocation))
     }
     
     // Visual Updaters
@@ -158,7 +161,43 @@ class MapViewController: UIViewController {
 }
 
 extension MapViewController: MKMapViewDelegate {
+    func mapViewDidFinishRenderingMap(mapView: MKMapView!, fullyRendered: Bool) {
+        if !self.hasZoomedInitialy {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                let camera: MKMapCamera = self.mapView!.camera.copy() as MKMapCamera
+                camera.centerCoordinate = CLLocationCoordinate2D(latitude: 37.7833, longitude: -122.4167)
+                camera.altitude = 190000
+                
+                // Animate map
+                self.mapView?.setCamera(camera, animated: true)
+                
+                // Animate size
+                UIView.animate([
+                    (2.0, {
+                        self.innerRingHeightConstraint?.constant = self.outerRingWidthConstraint!.constant
+                        self.innerRingWidthConstraint?.constant = self.outerRingWidthConstraint!.constant
+                        
+                        self.innerRing?.layoutIfNeeded()
+                    })
+                ])
+                
+                // Animate corner radius
+                let cornerRadiusAnimation = CABasicAnimation(keyPath: "cornerRadius")
+                cornerRadiusAnimation.fromValue = self.innerRingWidthConstraint!.constant / 2.0
+                cornerRadiusAnimation.toValue = self.outerRingWidthConstraint!.constant / 2.0
+                cornerRadiusAnimation.duration = 2.0
+                cornerRadiusAnimation.fillMode = kCAFillModeBoth
+                
+                self.innerRing?.layer.addAnimation(cornerRadiusAnimation, forKey: "cornerRadius")
+                self.innerRing?.layer.cornerRadius = self.outerRingWidthConstraint!.constant / 2.0
+                
+                self.hasZoomedInitialy = true
+            })
+        }
+    }
+    
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
+        println("\(self.mapView?.camera.altitude)")
         self.updateInnerRing(1.0)
         self.viewerManager?.viewingCoordinate = mapView.centerCoordinate
     }

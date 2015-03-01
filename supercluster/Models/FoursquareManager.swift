@@ -19,15 +19,24 @@ import MapKit
 
 class FoursquareManager: APIManager {
     override internal class var host: String {
-        return ""
+        return NSBundle.mainBundle().pathForResource("foursquare_final", ofType: "json")!
     }
     
-    override class func posts(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance) -> [Post] {
+    override class func posts(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance, size: Int = 20) -> [Post] {
         let response: NSDictionary = (NSString(contentsOfFile: self.host, encoding: NSUTF8StringEncoding, error: nil) as String).jsonObject as NSDictionary
         
         var posts: [Post] = []
-        for entry: NSDictionary in (response["response"]?["venues"] as [NSDictionary]) {
-            posts.append(self.postFromDictionary(entry))
+        for entry: NSDictionary in (response["venues"] as [NSDictionary]) {
+            let post = self.postFromDictionary(entry)
+            
+            if !post.place.isInRadius(radius, fromCoordinate: coordinate) {
+                continue
+            }
+            
+            posts.append(post)
+            if posts.count >= size {
+                break
+            }
         }
         
         return posts
@@ -43,7 +52,7 @@ extension Post {
         self.init(text: nil,
             imageURL: nil,
             source: SourceType.Foursquare,
-            user: User(checkinData: [:]),
+            user: nil,
             place: Place(checkinData: checkinData),
             pubdate: NSDate())
     }
@@ -67,7 +76,12 @@ extension Place {
         }
         
         var placeName: String? = checkinData["name"] as? String
+        var userCount: Int? = (checkinData["hereNow"]?["count"] as? NSNumber)?.integerValue
+        var category: String? = checkinData["categories"]?[0]?["shortName"] as? String
+        
         self.init(coordinate: coordinate,
-            name: placeName)
+            name: placeName,
+            userCount: userCount,
+            category: category)
     }
 }

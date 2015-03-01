@@ -22,15 +22,24 @@
                             <color key="textColor" red="0.93725490196078431" green="0.21568627450980393" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gSd-bl-0Rs" customClass="LazyImageView" customModule="supercluster" customModuleProvider="target">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gSd-bl-0Rs" customClass="LazyImageView" customModule="supercluster" customModuleProvider="target">
                             <rect key="frame" x="10" y="10" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="hCO-WP-vcD"/>
                                 <constraint firstAttribute="height" constant="30" id="itv-C9-fML"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="45J-Hb-Xir">
                             <rect key="frame" x="280" y="10" width="30" height="30"/>
+                            <color key="tintColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="0H0-LN-7kb"/>
                                 <constraint firstAttribute="height" constant="30" id="Pxm-KO-wxr"/>
@@ -83,8 +92,9 @@
                     </constraints>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRG-e0-hWM">
-                    <rect key="frame" x="5" y="50" width="310" height="65"/>
+                    <rect key="frame" x="5" y="50" width="310" height="75"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" red="0.1333333333" green="0.74509803919999995" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -100,7 +110,7 @@
                 <constraint firstItem="HRG-e0-hWM" firstAttribute="leading" secondItem="bus-eq-iCt" secondAttribute="leading" constant="5" id="fPB-OB-Sr3"/>
                 <constraint firstAttribute="trailing" secondItem="aeD-vg-peK" secondAttribute="trailing" id="gKW-w4-82t"/>
                 <constraint firstItem="I5k-11-BUa" firstAttribute="leading" secondItem="bus-eq-iCt" secondAttribute="leading" id="he0-SX-Gb1"/>
-                <constraint firstItem="I5k-11-BUa" firstAttribute="top" secondItem="HRG-e0-hWM" secondAttribute="bottom" id="jGT-sf-Jgd"/>
+                <constraint firstItem="I5k-11-BUa" firstAttribute="top" secondItem="HRG-e0-hWM" secondAttribute="bottom" constant="-10" id="jGT-sf-Jgd"/>
                 <constraint firstAttribute="bottom" secondItem="I5k-11-BUa" secondAttribute="bottom" id="oEe-1H-o3M"/>
                 <constraint firstItem="aeD-vg-peK" firstAttribute="leading" secondItem="bus-eq-iCt" secondAttribute="leading" id="qGt-VP-xCl"/>
             </constraints>
@@ -119,8 +129,8 @@
             <connections>
                 <outlet property="avatarView" destination="gSd-bl-0Rs" id="xKi-lc-3qN"/>
                 <outlet property="handleLabel" destination="hvz-Ey-Igo" id="uO3-Bs-OPN"/>
-                <outlet property="placeLabel" destination="Kq4-U9-6Po" id="iKj-yt-UcO"/>
-                <outlet property="pubdateLabel" destination="dcI-zg-GlB" id="5ng-QS-1Nh"/>
+                <outlet property="placeLabel" destination="dcI-zg-GlB" id="ktQ-Ch-SJl"/>
+                <outlet property="pubdateLabel" destination="Kq4-U9-6Po" id="Eg8-F7-Kt1"/>
                 <outlet property="sourceIconView" destination="45J-Hb-Xir" id="7Ot-H1-YYW"/>
                 <outlet property="textView" destination="HRG-e0-hWM" id="dIM-PT-T21"/>
             </connections>
