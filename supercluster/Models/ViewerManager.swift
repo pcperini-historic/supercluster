@@ -17,7 +17,7 @@ protocol ViewerManagerDelegate {
 
 class ViewerManager: NSObject {
     private class var host: String {
-        return "ws://172.20.10.11:3000"
+        return "ws://127.0.0.1:3000"
     }
     
     private var socket: SIOSocket?
