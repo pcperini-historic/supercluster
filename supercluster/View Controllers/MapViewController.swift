@@ -241,8 +241,14 @@ extension MapViewController: MKMapViewDelegate {
     }
     
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
-        var viewerView = ViewerAnnotationView(viewer: annotation as Viewer)
-        viewerView.tintColor = UIColor(red: 0.94, green: 0.22, blue: 0.44, alpha: 1.00)
+        var viewerView: ViewerAnnotationView? = mapView.dequeueReusableAnnotationViewWithIdentifier(className(ViewerAnnotationView)) as? ViewerAnnotationView
+        if viewerView == nil {
+            viewerView = ViewerAnnotationView(viewer: annotation as Viewer)
+        } else {
+            viewerView?.annotation = annotation
+        }
+        
+        viewerView?.tintColor = UIColor(red: 0.94, green: 0.22, blue: 0.44, alpha: 1.00)
         return viewerView
     }
 }
