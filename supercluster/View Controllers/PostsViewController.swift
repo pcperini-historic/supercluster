@@ -125,6 +125,35 @@ extension PostsViewController: UICollectionViewDataSource {
 }
 
 extension PostsViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let post = self.posts[indexPath.row]
+        
+        switch (post.user, post.imageURL) {
+        case let (.Some(user), .Some(imageURL)):
+            break
+            
+        case let (.Some(user), nil):
+            break
+            
+        case let (nil, nil):
+            if let mapVC = self.presentingViewController as? MapViewController {
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
+                let camera: MKMapCamera = mapVC.mapView!.camera.copy() as MKMapCamera
+                camera.centerCoordinate = post.place.coordinate
+                camera.altitude = 2000
+                
+                mapVC.mapView?.setCamera(camera, animated: true)
+            }
+            
+            break
+            
+        default:
+            break
+        }
+
+    }
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let post = self.posts[indexPath.row]
         

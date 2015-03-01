@@ -41,6 +41,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Cluster" width="90" height="90"/>
+        <image name="Cluster" width="81" height="79"/>
     </resources>
 </document>

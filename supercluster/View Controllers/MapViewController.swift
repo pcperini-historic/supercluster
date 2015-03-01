@@ -76,7 +76,7 @@ class MapViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var postsVC = segue.destinationViewController as PostsViewController
         postsVC.backgroundImage = self.view.snapshot().applyBlurWithRadius(8,
-            tintColor: UIColor(red: 0.10, green: 0.15, blue: 0.20, alpha: 0.40),
+            tintColor: UIColor(red: 0.10, green: 0.15, blue: 0.20, alpha: 0.50),
             saturationDeltaFactor: 1.8,
             maskImage: nil)
         
@@ -121,7 +121,7 @@ class MapViewController: UIViewController {
     func bringInShuttleButton() {
         self.shuttleButtonIsShowing = true
         self.shuttleButtonVerticalConstraint?.constant = 0
-        UIView.animateWithDuration(2.00, animations: {
+        UIView.animateWithDuration(1.50, animations: {
             self.shuttleButton?.layoutIfNeeded()
             return
         })
@@ -140,8 +140,8 @@ class MapViewController: UIViewController {
                     return
                 }),
                 
-                (2.00, {
-                    self.shuttleButtonVerticalConstraint?.constant = toBottomEdge ? -200 : 500
+                (1.50, {
+                    self.shuttleButtonVerticalConstraint?.constant = -200
                     self.shuttleButton?.layoutIfNeeded()
                 })
             ], completion: {
@@ -181,18 +181,18 @@ class MapViewController: UIViewController {
                         return
                     }),
                     
-                    (0.25, {
-                        self.shuttleButtonVerticalConstraint?.constant = toBottomEdge ? -200 : 500
+                    (0.75, {
+                        self.shuttleButtonVerticalConstraint?.constant = 1024
                         self.shuttleButton?.layoutIfNeeded()
+                        
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.25 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                            self.performSegueWithIdentifier("PostList", sender: self.shuttleButton)
+                        })
                     })
                 ], completion: {
                     self.shuttleButton?.rotation = -45
                     self.shuttleButtonVerticalConstraint?.constant = -200
                     self.shuttleButton?.setNeedsUpdateConstraints()
-                    
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.05 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-                        self.performSegueWithIdentifier("PostList", sender: self.shuttleButton)
-                    })
                 })
             })
         }
@@ -212,7 +212,7 @@ extension MapViewController: MKMapViewDelegate {
                 
                 // Animate size
                 UIView.animate([
-                    (3.0, {
+                    (2.5, {
                         self.innerRingHeightConstraint?.constant = self.outerRingWidthConstraint!.constant
                         self.innerRingWidthConstraint?.constant = self.outerRingWidthConstraint!.constant
                         
@@ -224,7 +224,7 @@ extension MapViewController: MKMapViewDelegate {
                 let cornerRadiusAnimation = CABasicAnimation(keyPath: "cornerRadius")
                 cornerRadiusAnimation.fromValue = self.innerRingWidthConstraint!.constant / 2.0
                 cornerRadiusAnimation.toValue = self.outerRingWidthConstraint!.constant / 2.0
-                cornerRadiusAnimation.duration = 3.0
+                cornerRadiusAnimation.duration = 2.5
                 cornerRadiusAnimation.fillMode = kCAFillModeBoth
                 
                 self.innerRing?.layer.addAnimation(cornerRadiusAnimation, forKey: "cornerRadius")
