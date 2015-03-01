@@ -32,6 +32,13 @@
 		7398D6581AA2DE0F006E1D32 /* CheckinPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7398D6571AA2DE0F006E1D32 /* CheckinPostView.xib */; };
 		7398D65A1AA2E0BB006E1D32 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398D6591AA2E0BB006E1D32 /* PostManager.swift */; };
 		7398D65C1AA2F9CF006E1D32 /* twitter_final.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7398D65B1AA2F9CF006E1D32 /* twitter_final.txt */; };
+		73B518DD1AA39325002F51DA /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B518DC1AA39325002F51DA /* WatchKit.framework */; };
+		73B518E21AA39325002F51DA /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B518E11AA39325002F51DA /* InterfaceController.swift */; };
+		73B518E41AA39325002F51DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73B518E31AA39325002F51DA /* Images.xcassets */; };
+		73B518E81AA39325002F51DA /* supercluster Watch App.app in Resources */ = {isa = PBXBuildFile; fileRef = 73B518E71AA39325002F51DA /* supercluster Watch App.app */; };
+		73B518EF1AA39325002F51DA /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73B518EE1AA39325002F51DA /* Interface.storyboard */; };
+		73B518F11AA39325002F51DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73B518F01AA39325002F51DA /* Images.xcassets */; };
+		73B518F41AA39325002F51DA /* supercluster WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 73B518DB1AA39324002F51DA /* supercluster WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		73C7FBB81AA13351005708A3 /* ClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7FBB71AA13351005708A3 /* ClassExtensions.swift */; };
 		73C7FBBA1AA134B8005708A3 /* TextPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7FBB91AA134B8005708A3 /* TextPostView.swift */; };
 		73C7FBBC1AA134C5005708A3 /* TextPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73C7FBBB1AA134C5005708A3 /* TextPostView.xib */; };
@@ -53,6 +60,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		73B518E91AA39325002F51DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73F16D221AA112C000725D96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73B518E61AA39325002F51DA;
+			remoteInfo = "supercluster Watch App";
+		};
+		73B518F21AA39325002F51DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73F16D221AA112C000725D96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73B518DA1AA39324002F51DA;
+			remoteInfo = "supercluster WatchKit Extension";
+		};
 		73F16D401AA112C100725D96 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 73F16D221AA112C000725D96 /* Project object */;
@@ -61,6 +82,20 @@
 			remoteInfo = supercluster;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		73B518FB1AA39325002F51DA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				73B518F41AA39325002F51DA /* supercluster WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0D880FA3DF57C5C74CC52D12 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +127,15 @@
 		7398D6571AA2DE0F006E1D32 /* CheckinPostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CheckinPostView.xib; path = "supercluster/Map Views/CheckinPostView.xib"; sourceTree = "<group>"; };
 		7398D6591AA2E0BB006E1D32 /* PostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostManager.swift; path = Models/PostManager.swift; sourceTree = "<group>"; };
 		7398D65B1AA2F9CF006E1D32 /* twitter_final.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = twitter_final.txt; sourceTree = "<group>"; };
+		73B518DB1AA39324002F51DA /* supercluster WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "supercluster WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73B518DC1AA39325002F51DA /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
+		73B518E01AA39325002F51DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73B518E11AA39325002F51DA /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		73B518E31AA39325002F51DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		73B518E71AA39325002F51DA /* supercluster Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "supercluster Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73B518ED1AA39325002F51DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73B518EE1AA39325002F51DA /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
+		73B518F01AA39325002F51DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		73C7FBB21AA13042005708A3 /* supercluster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "supercluster-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		73C7FBB71AA13351005708A3 /* ClassExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassExtensions.swift; sourceTree = "<group>"; };
 		73C7FBB91AA134B8005708A3 /* TextPostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextPostView.swift; path = "supercluster/Post Views/TextPostView.swift"; sourceTree = "<group>"; };
@@ -118,6 +162,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		73B518D81AA39324002F51DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73B518DD1AA39325002F51DA /* WatchKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		73F16D271AA112C000725D96 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,6 +198,42 @@
 				7398D65B1AA2F9CF006E1D32 /* twitter_final.txt */,
 			);
 			name = Demo;
+			sourceTree = "<group>";
+		};
+		73B518DE1AA39325002F51DA /* supercluster WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				73B518E11AA39325002F51DA /* InterfaceController.swift */,
+				73B518E31AA39325002F51DA /* Images.xcassets */,
+				73B518DF1AA39325002F51DA /* Supporting Files */,
+			);
+			path = "supercluster WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		73B518DF1AA39325002F51DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				73B518E01AA39325002F51DA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		73B518EB1AA39325002F51DA /* supercluster Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				73B518EE1AA39325002F51DA /* Interface.storyboard */,
+				73B518F01AA39325002F51DA /* Images.xcassets */,
+				73B518EC1AA39325002F51DA /* Supporting Files */,
+			);
+			path = "supercluster Watch App";
+			sourceTree = "<group>";
+		};
+		73B518EC1AA39325002F51DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				73B518ED1AA39325002F51DA /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		73CF1D7E1AA17BD400D7280D /* Map Views */ = {
@@ -204,6 +292,8 @@
 				7389E2001AA31314008A9950 /* README.md */,
 				73F16D2C1AA112C000725D96 /* supercluster */,
 				73F16D421AA112C100725D96 /* superclusterTests */,
+				73B518DE1AA39325002F51DA /* supercluster WatchKit Extension */,
+				73B518EB1AA39325002F51DA /* supercluster Watch App */,
 				73F16D2B1AA112C000725D96 /* Products */,
 				890057BC471CE0E5B2F635E2 /* Frameworks */,
 				A4FB68F32FB23BBB32CF7CEB /* Pods */,
@@ -215,6 +305,8 @@
 			children = (
 				73F16D2A1AA112C000725D96 /* supercluster.app */,
 				73F16D3F1AA112C100725D96 /* superclusterTests.xctest */,
+				73B518DB1AA39324002F51DA /* supercluster WatchKit Extension.appex */,
+				73B518E71AA39325002F51DA /* supercluster Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -295,6 +387,7 @@
 			children = (
 				73CF1D471AA1582A00D7280D /* MapKit.framework */,
 				0D880FA3DF57C5C74CC52D12 /* Pods.framework */,
+				73B518DC1AA39325002F51DA /* WatchKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -311,6 +404,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		73B518DA1AA39324002F51DA /* supercluster WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73B518FA1AA39325002F51DA /* Build configuration list for PBXNativeTarget "supercluster WatchKit Extension" */;
+			buildPhases = (
+				73B518D71AA39324002F51DA /* Sources */,
+				73B518D81AA39324002F51DA /* Frameworks */,
+				73B518D91AA39324002F51DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73B518EA1AA39325002F51DA /* PBXTargetDependency */,
+			);
+			name = "supercluster WatchKit Extension";
+			productName = "supercluster WatchKit Extension";
+			productReference = 73B518DB1AA39324002F51DA /* supercluster WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		73B518E61AA39325002F51DA /* supercluster Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73B518F91AA39325002F51DA /* Build configuration list for PBXNativeTarget "supercluster Watch App" */;
+			buildPhases = (
+				73B518E51AA39325002F51DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "supercluster Watch App";
+			productName = "supercluster Watch App";
+			productReference = 73B518E71AA39325002F51DA /* supercluster Watch App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		73F16D291AA112C000725D96 /* supercluster */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73F16D491AA112C100725D96 /* Build configuration list for PBXNativeTarget "supercluster" */;
@@ -321,10 +447,12 @@
 				73F16D281AA112C000725D96 /* Resources */,
 				54550E4C98EB046C57AA4FA4 /* Copy Pods Resources */,
 				0471CF197A64F2EA92803505 /* Embed Pods Frameworks */,
+				73B518FB1AA39325002F51DA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				73B518F31AA39325002F51DA /* PBXTargetDependency */,
 			);
 			name = supercluster;
 			productName = supercluster;
@@ -358,6 +486,12 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "perini-hestin";
 				TargetAttributes = {
+					73B518DA1AA39324002F51DA = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					73B518E61AA39325002F51DA = {
+						CreatedOnToolsVersion = 6.2;
+					};
 					73F16D291AA112C000725D96 = {
 						CreatedOnToolsVersion = 6.1.1;
 						SystemCapabilities = {
@@ -387,11 +521,31 @@
 			targets = (
 				73F16D291AA112C000725D96 /* supercluster */,
 				73F16D3E1AA112C100725D96 /* superclusterTests */,
+				73B518DA1AA39324002F51DA /* supercluster WatchKit Extension */,
+				73B518E61AA39325002F51DA /* supercluster Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		73B518D91AA39324002F51DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73B518E81AA39325002F51DA /* supercluster Watch App.app in Resources */,
+				73B518E41AA39325002F51DA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73B518E51AA39325002F51DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73B518EF1AA39325002F51DA /* Interface.storyboard in Resources */,
+				73B518F11AA39325002F51DA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		73F16D281AA112C000725D96 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -467,6 +621,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		73B518D71AA39324002F51DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73B518E21AA39325002F51DA /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		73F16D261AA112C000725D96 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -515,6 +677,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		73B518EA1AA39325002F51DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73B518E61AA39325002F51DA /* supercluster Watch App */;
+			targetProxy = 73B518E91AA39325002F51DA /* PBXContainerItemProxy */;
+		};
+		73B518F31AA39325002F51DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73B518DA1AA39324002F51DA /* supercluster WatchKit Extension */;
+			targetProxy = 73B518F21AA39325002F51DA /* PBXContainerItemProxy */;
+		};
 		73F16D411AA112C100725D96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 73F16D291AA112C000725D96 /* supercluster */;
@@ -542,6 +714,66 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		73B518F51AA39325002F51DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "supercluster WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		73B518F61AA39325002F51DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "supercluster WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		73B518F71AA39325002F51DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = supercluster_WatchKit_Extension;
+				INFOPLIST_FILE = "supercluster Watch App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		73B518F81AA39325002F51DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				IBSC_MODULE = supercluster_WatchKit_Extension;
+				INFOPLIST_FILE = "supercluster Watch App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 		73F16D471AA112C100725D96 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -626,6 +858,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = supercluster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -641,6 +874,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = supercluster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -685,6 +919,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		73B518F91AA39325002F51DA /* Build configuration list for PBXNativeTarget "supercluster Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73B518F71AA39325002F51DA /* Debug */,
+				73B518F81AA39325002F51DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		73B518FA1AA39325002F51DA /* Build configuration list for PBXNativeTarget "supercluster WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73B518F51AA39325002F51DA /* Debug */,
+				73B518F61AA39325002F51DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		73F16D251AA112C000725D96 /* Build configuration list for PBXProject "supercluster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
