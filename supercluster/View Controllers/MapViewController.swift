@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
     // Maps
@@ -67,6 +68,19 @@ class MapViewController: UIViewController {
     // Responders
     @IBAction func shuttleButtonWasPressed(sender: IconButton) {
         self.sendOutShuttleButton(toBottomEdge: false)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var postsVC = segue.destinationViewController as PostsViewController
+        postsVC.backgroundImage = self.view.snapshot().applyBlurWithRadius(8,
+            tintColor: UIColor(white: 0.95, alpha: 0.40),
+            saturationDeltaFactor: 1.8,
+            maskImage: nil)
+        
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(CLLocation(latitude: self.mapView!.centerCoordinate.latitude, longitude: self.mapView!.centerCoordinate.longitude), completionHandler: { (placemarks: [AnyObject]!, _) in
+            postsVC.title = placemarks[0].name
+        })
     }
     
     // Visual Updaters

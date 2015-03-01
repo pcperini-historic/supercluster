@@ -12,9 +12,25 @@ import MapKit
 
 class PostsViewController: UIViewController {
     // Views
+    @IBOutlet var titleLabel: UILabel?
     @IBOutlet var collectionView: UICollectionView?
+    @IBOutlet var backgroundImageView: UIImageView?
+    
+    var backgroundImage: UIImage? {
+        didSet {
+            self.backgroundImageView?.image = self.backgroundImage
+        }
+    }
+    
+    override var title: String! {
+        didSet {
+            self.titleLabel?.text = self.title
+        }
+    }
     
     override func viewDidLoad() {
+        self.backgroundImageView?.image = self.backgroundImage
+        
         // Setup post views
         for aClass: AnyClass in [TextPostView.self, ImagePostView.self] {
             self.collectionView?.registerNib(UINib(nibName: className(aClass), bundle: nil),

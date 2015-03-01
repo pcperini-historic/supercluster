@@ -10,7 +10,6 @@ import Foundation
 
 extension UIView {
     class func animate(animations: [(NSTimeInterval, () -> ())], completion: (() -> ())? = nil) {
-        println("animating \(animations.count)")
         if animations.count <= 0 {
             if completion != nil {
                 completion!()
@@ -25,5 +24,13 @@ extension UIView {
         UIView.animateWithDuration(animationTuple.0, animations: animationTuple.1) { (completed: Bool) in
             UIView.animate(remainingAnimations, completion: completion)
         }
+    }
+    
+    func snapshot() -> UIImage {
+        UIGraphicsBeginImageContext(self.bounds.size)
+        self.drawViewHierarchyInRect(self.bounds, afterScreenUpdates: false)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
 }

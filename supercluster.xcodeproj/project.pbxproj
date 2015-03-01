@@ -21,6 +21,7 @@
 		7382819B1AA2779700F46162 /* twitter.json in Resources */ = {isa = PBXBuildFile; fileRef = 7382819A1AA2779700F46162 /* twitter.json */; };
 		7382819E1AA2813D00F46162 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382819D1AA2813D00F46162 /* RingView.swift */; };
 		738281A01AA2983400F46162 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382819F1AA2983400F46162 /* IconButton.swift */; };
+		7398D6431AA2B218006E1D32 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 7398D6421AA2B218006E1D32 /* UIImage+ImageEffects.m */; };
 		73C7FBB81AA13351005708A3 /* ClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7FBB71AA13351005708A3 /* ClassExtensions.swift */; };
 		73C7FBBA1AA134B8005708A3 /* TextPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7FBB91AA134B8005708A3 /* TextPostView.swift */; };
 		73C7FBBC1AA134C5005708A3 /* TextPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73C7FBBB1AA134C5005708A3 /* TextPostView.xib */; };
@@ -70,6 +71,8 @@
 		7382819A1AA2779700F46162 /* twitter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = twitter.json; sourceTree = "<group>"; };
 		7382819D1AA2813D00F46162 /* RingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RingView.swift; path = "Map Views/RingView.swift"; sourceTree = "<group>"; };
 		7382819F1AA2983400F46162 /* IconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconButton.swift; path = "Map Views/IconButton.swift"; sourceTree = "<group>"; };
+		7398D6411AA2B218006E1D32 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Categories/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		7398D6421AA2B218006E1D32 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Categories/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		73C7FBB21AA13042005708A3 /* supercluster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "supercluster-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		73C7FBB71AA13351005708A3 /* ClassExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassExtensions.swift; sourceTree = "<group>"; };
 		73C7FBB91AA134B8005708A3 /* TextPostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextPostView.swift; path = "supercluster/Post Views/TextPostView.swift"; sourceTree = "<group>"; };
@@ -139,6 +142,8 @@
 		73CF1D811AA18D4A00D7280D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				7398D6411AA2B218006E1D32 /* UIImage+ImageEffects.h */,
+				7398D6421AA2B218006E1D32 /* UIImage+ImageEffects.m */,
 				737712681AA24EDA007BE4FE /* String+JSONExtensions.swift */,
 				73CF1D7F1AA18D4700D7280D /* UIView+AnimationExtensions.swift */,
 				73CF1D8C1AA23FA500D7280D /* CLLocationCoordinate2D+Extensions.swift */,
@@ -450,6 +455,7 @@
 				73F16D5E1AA125B500725D96 /* MapViewController.swift in Sources */,
 				73CF1D8D1AA23FA500D7280D /* CLLocationCoordinate2D+Extensions.swift in Sources */,
 				7382819E1AA2813D00F46162 /* RingView.swift in Sources */,
+				7398D6431AA2B218006E1D32 /* UIImage+ImageEffects.m in Sources */,
 				737712721AA2643C007BE4FE /* ClusterView.swift in Sources */,
 				73CF1D871AA2329A00D7280D /* Viewer.swift in Sources */,
 				737712691AA24EDA007BE4FE /* String+JSONExtensions.swift in Sources */,
