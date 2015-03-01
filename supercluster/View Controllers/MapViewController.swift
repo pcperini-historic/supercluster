@@ -53,6 +53,11 @@ class MapViewController: UIViewController {
         self.mapViewPinchGestureRecognizer?.addTarget(self, action: "mapViewPinchGestureWasRecognized:")
     }
     
+    // FUCK THIS
+    override func viewDidAppear(animated: Bool) {
+        self.bringInShuttleButton()
+    }
+    
     // Gestures
     func mapViewPinchGestureWasRecognized(recognizer: UIPinchGestureRecognizer) {
         switch recognizer.state {

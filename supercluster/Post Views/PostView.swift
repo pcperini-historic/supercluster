@@ -14,6 +14,11 @@ import UIKit
         return className(self.dynamicType)
     }
     
+    // Sizing
+    class func estimatedSize(post: Post) -> CGSize {
+        return CGSizeZero
+    }
+    
     // Border
     @IBInspectable var borderColor: UIColor = UIColor.clearColor() {
         didSet {

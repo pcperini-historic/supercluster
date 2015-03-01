@@ -1,16 +1,16 @@
 PODS:
   - Alamofire (1.1.4)
-  - RFQuiltLayout (1.1.1)
+  - CHTCollectionViewWaterfallLayout (0.8)
   - SIOSocket (0.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 1.1)
-  - RFQuiltLayout
+  - CHTCollectionViewWaterfallLayout
   - SIOSocket
 
 SPEC CHECKSUMS:
   Alamofire: 524225da382071ee3e6d0badd0ee4b4dc36740de
-  RFQuiltLayout: 117596a16f64342be035bc4544ebdcaa2abe761b
+  CHTCollectionViewWaterfallLayout: 14b7950cbe45ae9297e7759148d69b022bac047d
   SIOSocket: 40ebc9f014b9fec4ec595212faaf6f19cf29d1f2
 
 COCOAPODS: 0.36.0.rc.1

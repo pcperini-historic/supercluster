@@ -5,6 +5,5 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 use_frameworks!
 
-pod "RFQuiltLayout"
 pod "SIOSocket"
 pod "Alamofire", "~> 1.1"

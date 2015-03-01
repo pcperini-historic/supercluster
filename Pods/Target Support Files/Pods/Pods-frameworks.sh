@@ -49,11 +49,11 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Alamofire.framework'
-  install_framework 'RFQuiltLayout.framework'
+  install_framework 'CHTCollectionViewWaterfallLayout.framework'
   install_framework 'SIOSocket.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Alamofire.framework'
-  install_framework 'RFQuiltLayout.framework'
+  install_framework 'CHTCollectionViewWaterfallLayout.framework'
   install_framework 'SIOSocket.framework'
 fi

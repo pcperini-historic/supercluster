@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-RFQuiltLayout.xcscheme</key>
+		<key>Pods-CHTCollectionViewWaterfallLayout.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>49D0AF69F9124CBF87121F9A</key>
+		<key>053B79DF61CA68A12458B258</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4E48206D213CB9E0B8392191</key>
+		<key>5DDC1DBCCDA5870B117B86E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8DF3B55404C177173F3682B4</key>
+		<key>9BE894B6EEF04C984AE6B307</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F7C86EE0DB447C42028215AD</key>
+		<key>F62D5ACB3054C24BCDE3C617</key>
 		<dict>
 			<key>primary</key>
 			<true/>

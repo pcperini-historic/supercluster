@@ -8,7 +8,24 @@
 
 import UIKit
 
-class TextPostView: PostView {
+class TextPostView: PostView {    
+    // Sizing
+    override class func estimatedSize(post: Post) -> CGSize {
+        var cell = TextPostView(nib: nil)
+        cell.awakeFromNib()
+        
+        var size = cell.bounds.size
+        let originalTextViewSize = cell.textView!.bounds.size
+        
+        cell.text = post.text
+        cell.textView?.sizeToFit()
+        
+        let newTextViewSize = cell.textView!.bounds.size
+        
+        size.height += (newTextViewSize.height - originalTextViewSize.height)
+        return size
+    }
+    
     // Author
     @IBOutlet private var avatarView: LazyImageView?
     @IBOutlet private var handleLabel: UILabel?
